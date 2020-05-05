@@ -1,4 +1,4 @@
-service: ${self:custom.name}
+service: afn-contentful-next
 
 provider:
   name: aws
