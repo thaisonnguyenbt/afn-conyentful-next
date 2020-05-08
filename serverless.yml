@@ -3,7 +3,7 @@ service: afn-contentful-next
 provider:
   name: aws
   runtime: nodejs12.x
-  stage: ${opt:stage, 'production'}
+  stage: ${opt:stage, 'dev'}
   region: ap-southeast-1
 
 plugins:
@@ -12,6 +12,8 @@ plugins:
 custom:
   name: afn-contentful-next
   serverless-nextjs:
+    nextConfigDir: ./
+    cloudFront: true
     assetsBucketName: 'afn-contentful-next-${self:provider.stage}'
 
 package:
