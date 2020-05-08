@@ -1,0 +1,40 @@
+/**************************************************************************************************
+*  Tab Panel (Bootstrap)
+**************************************************************************************************/
+.afn .o-tab-panel {
+	.nav-tabs {
+		padding: 0 $spacing;
+
+		.nav-item {
+			margin-bottom: 0;
+		}
+
+		.nav-link {
+			padding: 0 $spacing--small;
+			border: none;
+		}
+
+		.nav-link * {
+			color: $color--black;
+		}
+
+		.nav-link.active {
+			border-bottom: 1px solid $color--maroonFlush;
+		}
+
+		.nav-link.active * {
+			color: $color--maroonFlush;
+		}
+	}
+
+	.tab-content {
+		margin-top: $spacing;
+	}
+
+	.tab-pane.mobile-padding {
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			padding-right: $spacing;
+			padding-left: $spacing;
+		}
+	}
+}

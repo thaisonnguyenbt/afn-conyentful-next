@@ -1,0 +1,56 @@
+/**************************************************************************************************
+*   Table
+**************************************************************************************************/
+.o-table {
+
+	* {
+		@include font-size(14);
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			@include font-size(12);
+		}
+	}
+
+	.row {
+		padding-top: $spacing--small;
+		padding-bottom: $spacing--small;
+		margin-right: auto;
+		margin-left: auto;
+
+		div:first-child {
+			text-align: left;
+		}
+		div:not(:first-child) {
+			text-align: right;
+		}
+
+		.indented {
+			padding-left: $spacing;
+		}
+	}
+
+	.m-table__header {
+		border-top: 1px solid $color--offBlack;
+		border-bottom: 1px solid $color--offBlack;
+	}
+
+	.m-table__group {
+		.row:not(:last-child) {
+			border-bottom: 1px solid $color--faintGrey;
+		}
+	}
+
+	.m-table__group:not(:last-child) {
+		border-bottom: 1px solid $color--offBlack;
+	}
+
+	.m-table__row {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+	}
+
+	.a-dot {
+		margin-left: $spacing--small;
+	}
+}

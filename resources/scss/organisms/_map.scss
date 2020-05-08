@@ -1,0 +1,93 @@
+/**************************************************************************************************
+*   Maps
+**************************************************************************************************/
+.o-map * {
+	line-height: 10px;
+}
+
+.o-map {
+	.m-map__content {
+		padding-bottom: $spacing;
+	}
+
+	.m-map__details {
+		padding-bottom: $spacing;
+
+		p {
+			margin-bottom: 0;
+			line-height: 27px;
+		}
+	}
+
+	.m-map__appendix {
+		display: flex;
+		padding: $spacing;
+		background: $color--white;
+		flex-direction: row;
+
+		h3 {
+			line-height: 39px;
+		}
+
+		p {
+			margin-bottom: 0;
+			line-height: 27px;
+		}
+
+		.m-map__appendixRight {
+			margin-left: auto;
+
+			a {
+				line-height: 45px;
+			}
+		}
+
+		.icon-afn-cta {
+			@include font-size(45);
+			line-height: 45px;
+		}
+	}
+}
+
+.o-map .m-map__googleMap {
+	position: relative;
+	height: 100%;
+	padding-bottom: 50%; /* desired aspect ratio */
+	overflow: hidden;
+
+	//Google Map override
+	iframe {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100% !important;
+		height: 100% !important;
+		border: 0;
+	}
+
+	.zoomInButton {
+		top: 20px !important;
+		right: 20px !important;
+		line-height: 12px;
+
+		> div > div {
+			// padding-top: 9px !important;
+			// padding-bottom: 9px !important;
+			// padding-left: 8px !important;
+			// padding-right: 8px !important;
+		}
+	}
+
+	.zoomOutButton {
+		top: 60px !important;
+		right: 20px !important;
+		line-height: 12px;
+
+		> div > div {
+			// padding-top: 9px !important;
+			// padding-bottom: 9px !important;
+			// padding-left: 8px !important;
+			// padding-right: 8px !important;
+		}
+	}
+}

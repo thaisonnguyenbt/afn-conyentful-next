@@ -1,0 +1,30 @@
+/**************************************************************************************************
+*   Prompt Login
+**************************************************************************************************/
+.o-prompt-login {
+	max-width: 500px;
+	margin: 0 auto;
+	text-align: center;
+
+	@include bp('max-width', $breakpoint--mobileLarge) {
+		max-width: 100%;
+	}
+
+	.m-prompt-login__buttons {
+		display: flex;
+		margin: $spacing--medium auto;
+		flex-direction: row;
+		align-items: center;
+		justify-content: center;
+
+		button {
+			&:first-child {
+				margin-right: $spacing--small;
+			}
+
+			&:last-child {
+				margin-left: $spacing--small;
+			}
+		}
+	}
+}

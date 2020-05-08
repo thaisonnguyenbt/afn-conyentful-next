@@ -1,0 +1,129 @@
+/**************************************************************************************************
+*   Carousel: Default
+**************************************************************************************************/
+
+.o-carousel-container.owl-carousel {
+	position: relative;
+	padding: 0;
+	margin: 0 0 $spacing--medium;
+
+	.owl-dots {
+		position: absolute;
+		bottom: 20px;
+		left: 0;
+		padding: $spacing--small $spacing--medium;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			bottom: 10px;
+			padding: $spacing--small $spacing;
+		}
+
+		.owl-dot span {
+			background: $color--grey;
+		}
+
+		.owl-dot:hover span,
+		.owl-dot.active span {
+			background: $color--flamingo;
+		}
+	}
+
+	.owl-nav {
+		position: absolute;
+		right: 0;
+		bottom: 20px;
+		padding: $spacing--small $spacing--medium;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			bottom: 5px;
+			padding: $spacing--small $spacing;
+		}
+
+		.owl-prev,
+		.owl-next {
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				width: auto;
+				height: 30px;
+			}
+		}
+
+		.owl-prev {
+			background: transparent;
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				margin-right: $spacing--tiny;
+			}
+		}
+
+		.owl-next {
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				margin-left: $spacing--tiny;
+			}
+		}
+
+		.owl-prev span,
+		.owl-next span {
+			display: block;
+			padding: 7px;
+			color: $color--flamingo;
+			background-color: $color--white;
+			border-radius: 50%;
+		}
+
+		.owl-prev:hover span,
+		.owl-next:hover span {
+			color: $color--maroonFlush;
+		}
+
+		.owl-prev.disabled span,
+		.owl-next.disabled span {
+			background-color: $color--dustyGrey;
+		}
+	}
+
+	.owl-prev {
+		position: relative;
+		top: auto;
+		left: 0;
+		margin-right: 15px;
+		transform: none;
+	}
+
+	.owl-next {
+		position: relative;
+		top: auto;
+		right: 0;
+		transform: none;
+	}
+
+}
+
+.no-gap-both .o-carousel-container.owl-carousel {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.no-gap-top .o-carousel-container.owl-carousel {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.no-gap-bottom .o-carousel-container.owl-carousel {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}
+
+//IE 10 and 11
+@media screen and (-ms-high-contrast: none) {
+	.o-carousel-container.owl-carousel {
+		height: auto !important;
+	}
+}
+
+//Edge
+@supports (-ms-user-select: none) {
+	.o-carousel-container.owl-carousel {
+		height: auto !important;
+	}
+}

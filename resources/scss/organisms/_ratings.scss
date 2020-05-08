@@ -1,0 +1,259 @@
+/**************************************************************************************************
+*   Gigya Ratings and Reviews
+**************************************************************************************************/
+.afn .o-ratings {
+	margin-top: $spacing--medium;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding: 0 15px;
+	}
+
+	//General
+	* {
+		font-family: 'Hurme Geometric Sans Regular', serif;
+	}
+
+	h1 {
+		font-family: 'Hurme Geometric Sans Bold', serif;
+	}
+
+	//Default Star
+	*.gig-composebox-rating-_overall .gig-composebox-rating-star,
+	*.gig-composebox-rating-_overall.gig-composebox-field-error:hover .gig-composebox-rating-star,
+	*.gig-selfreview-rating-_overall .gig-selfreview-rating-star {
+		width: 20px;
+		height: 22px;
+		margin-right: $spacing--tiny;
+		background-image: url('../resources/images/ratings/empty-star.svg');
+		background-size: cover;
+
+		&:focus {
+			border: none;
+			outline: 0;
+		}
+	}
+
+	//Full Star
+	*.gig-composebox-rating-_overall .gig-composebox-rating-star-full,
+	*.gig-composebox-rating-_overall.gig-composebox-field-error:hover .gig-composebox-rating-star-full,
+	*.gig-selfreview-rating-_overall .gig-selfreview-rating-star-full {
+		width: 20px;
+		height: 22px;
+		margin-right: $spacing--tiny;
+		background-image: url('../resources/images/ratings/full-star.svg');
+		background-size: cover;
+
+		&:focus {
+			border: none;
+			outline: 0;
+		}
+	}
+
+	//Comments container
+	.gig-comments-container {
+		margin-top: $spacing--medium;
+	}
+
+	//Header
+	.gig-comments-container .gig-composebox-title {
+		display: none
+	}
+
+	//Follow replies
+	.gig-comments-container .gig-composebox-follow {
+		display: none
+	}
+
+	//Log out
+	.gig-comments-container .gig-composebox-logout {
+		display: none;
+	}
+
+	//Overall Rating Label
+	#recipe-ratings-reviews *.gig-composebox-rating-title {
+		@include font-size(22);
+		width: auto;
+		font-family: 'Hurme Geometric Sans Regular', serif;
+		line-height: 1.35em;
+		letter-spacing: -0.5px;
+		color: $color--black;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			@include font-size(18);
+		}
+	}
+
+	//Editor Box
+	.gig-composebox-data {
+		padding-left: 50px;
+	}
+
+	//Share Options
+	*.gig-composebox-share {
+		display: none;
+	}
+
+	//Post Button
+	.gig-composebox-post.gig-comments-button {
+		@include font-size(17);
+		padding: $spacing--tiny $spacing;
+		color: $color--white;
+		background:  $color--maroonFlush;
+		border: 1px solid $color--maroonFlush;
+		border-radius: 25px;
+		outline: 0;
+		box-shadow: none;
+		transition: background 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+		&:focus {
+			outline: 0;
+		}
+
+		&:hover {
+			background: $color--mandy;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			@include font-size(14);
+		}
+	}
+
+	//Profile Photo
+	.gig-comment-img {
+		width: 40px !important;
+		height: 40px !important;
+		overflow: hidden;
+		background-color: $color--white;
+		border: 1.5px solid $color--white;
+		border-radius: 50%;
+		transition: all 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+	}
+
+	//Text Area Placeholder
+	*.gig-composebox-textarea:empty:not(:focus):before {
+		@include font-size(14);
+	}
+
+	//Text Area Filled In Text
+	.gig-comments-container .gig-composebox-textarea,
+	.gig-comments-container .gig-composebox-textarea * {
+		@include font-size(14);
+	}
+
+	//Posted Comment
+	.gig-selfreview-header,
+	.gig-selfreview-header-left,
+	.gig-selfreview-header-right,
+	.gig-selfreview-summary-container,
+	.gig-selfreview-body-container {
+		display: none;
+	}
+
+	//Comments
+	.gig-comments-comments {
+
+		//Title
+		.gig-comment-title {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			.gig-comment-rating {
+				display: flex;
+				align-self: center;
+			}
+		}
+
+		//Ratings
+		.gig-comment-rating {
+			margin-bottom: $spacing--small;
+		}
+
+		*.gig-comment-rating-star,
+		*.gig-composebox-rating-star,
+		*.gig-selfreview-rating-star {
+			width: 20px;
+			height: 22px;
+			background-image: url('../resources/images/ratings/empty-star.svg');
+			background-size: cover;
+		}
+
+		*.gig-comment-rating-star-full,
+		*.gig-composebox-rating-star-full,
+		*.gig-selfreview-rating-star-full {
+			width: 20px;
+			height: 22px;
+			background-image: url('../resources/images/ratings/full-star.svg');
+			background-size: cover;
+		}
+
+		//Summary
+		.gig-comment-summary {
+			display: none;
+		}
+
+		//Comment Info
+		.gig-comment-data {
+			padding-left: 50px;
+		}
+
+		//Username
+		.gig-comment-username,
+		.gig-comment-username.gig-comment-username-badge-moderators {
+			@include font-size(17);
+			color: $color--black;
+		}
+
+		//Comment Body
+		.gig-comment-body,
+		.gig-comment-body * {
+			@include font-size(14);
+		}
+
+		//Like Link
+		.gig-comment-likeLink,
+		.gig-comment-replyLink,
+		.gig-comment-repliesArrow-text {
+			&:focus {
+				outline: 0;
+			}
+		}
+	}
+
+	//Load More Comments
+	.gig-comments-more {
+		@include font-size(17);
+		padding: $spacing--small $spacing;
+		color: $color--white;
+		background:  $color--maroonFlush;
+		border: 1px solid $color--maroonFlush;
+		border-radius: 25px;
+		box-shadow: none;
+		outline: 0;
+		transition: background 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+		&:focus {
+			outline: 0;
+		}
+
+		&:hover {
+			background: $color--mandy;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			@include font-size(14);
+		}
+	}
+
+	.gig-comments-more.gig-comments-more-progress {
+		height: 0;
+		padding: 0;
+		background: transparent;
+		border: none;
+	}
+}
+
+//iframe
+.gig-comments-container.gig-comments-loginbox {
+	display: none !important;
+}

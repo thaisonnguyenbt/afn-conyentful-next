@@ -1,0 +1,113 @@
+/**************************************************************************************************
+*   Content Box: Large
+**************************************************************************************************/
+.m-content-box.-large {
+	margin: 0 0 $spacing--medium;
+	background: $color--white;
+
+	&.-left .row {
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			flex-direction: column-reverse;
+		}
+	}
+
+	&.-right .row {
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			flex-direction: column;
+		}
+	}
+
+	[class^='col-'],
+	[class*=' col-'] {
+		position: relative;
+		display: flex;
+		text-align: left;
+		align-items: center;
+		justify-content: center;
+		flex: 1;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			width: 100%;
+			max-width: 100%;
+			flex: 1;
+		}
+	}
+
+	[class^='col-']:first-child,
+	[class*=' col-']:first-child {
+		padding-right: 0;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding-right: 15px;
+		}
+	}
+
+	[class^='col-']:last-child,
+	[class*=' col-']:last-child {
+		padding-left: 0;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding-left: 15px;
+		}
+	}
+
+	.m-content-box__copy span {
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+
+	.m-content-box__copy a {
+		padding-top: $spacing--small;
+	}
+
+	.m-content-box__content {
+		width: 100%;
+		margin: $spacing;
+
+		.cmp-title__text {
+			margin: 0;
+		}
+
+		.a-category-tag {
+			margin-bottom: $spacing--small;
+
+			&.c-margin-top {
+				margin-top: 0;
+			}
+		}
+
+		.a-category-tag span {
+			@include font-size(15);
+			padding: 7px 15px;
+			color: $color--white;
+			text-transform: uppercase;
+			background:  $color--mandy;
+			border: 1px solid $color--mandy;
+			border-radius: 25px;
+
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				@include font-size(13);
+			}
+		}
+	}
+}
+
+
+.no-gap-both .m-content-box.-large {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.no-gap-top .m-content-box.-large {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.no-gap-bottom .m-content-box.-large {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}

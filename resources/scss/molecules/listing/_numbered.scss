@@ -1,0 +1,33 @@
+/**************************************************************************************************
+*   Listing: OL
+**************************************************************************************************/
+.m-listing.-numbered {
+	padding: 0;
+	list-style: none;
+	counter-reset: item;
+
+	li {
+		position: relative;
+		padding-left: 40px;
+		margin-bottom: $spacing--small;
+		counter-increment: item;
+	}
+
+	li:before {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: inline-block;
+		width: 25px;
+		color: $color--white;
+		text-align: center;
+		vertical-align: middle;
+		background: $color--maroonFlush;
+		content: counter(item);
+		transform: translateY(-50%);
+	}
+
+	.a-link {
+		color: $color--black;
+	}
+}

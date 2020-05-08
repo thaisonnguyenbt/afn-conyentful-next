@@ -1,0 +1,67 @@
+/**************************************************************************************************
+*   Carousel: Mixed content
+**************************************************************************************************/
+.o-carousel-container.-mixed.owl-carousel {
+	padding: 0 0 55px;
+
+	.owl-dots {
+		bottom: -60px;
+		padding-left: 0;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			bottom: -10px;
+		}
+
+		.owl-dot span {
+			background: transparent;
+			border: 1px solid $color--flamingo;
+		}
+
+		.owl-dot.active span {
+			background: $color--flamingo;
+			border: 1px solid $color--flamingo;
+		}
+
+		.owl-dot:hover span {
+			background: $color--flamingo;
+			border: 1px solid $color--flamingo;
+		}
+	}
+
+	.owl-nav {
+		bottom: -75px;
+		padding-right: 0;
+		background: transparent;
+		border: none;
+
+		.owl-prev, .owl-next {
+			border: none;
+			background: transparent;
+		}
+
+		.owl-prev span,
+		.owl-next span {
+			display: block;
+			color: $color--white;
+			background-color: $color--flamingo;
+		}
+
+		.owl-prev:hover span,
+		.owl-next:hover span {
+			background-color: $color--maroonFlush;
+		}
+	}
+
+	.m-featured-signpost .m-featured-signpost__overlay {
+		bottom: 0;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			bottom: 0;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			bottom: 0;
+		}
+	}
+
+}

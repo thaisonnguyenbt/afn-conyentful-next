@@ -1,0 +1,36 @@
+/**************************************************************************************************
+*  Recommendations Categories
+**************************************************************************************************/
+.m-recommendations__categories {
+	margin: $spacing 0;
+
+	ul {
+		display: flex;
+		padding: 0 $spacing $spacing--small 0;
+		overflow-x: auto;
+		white-space: nowrap;
+		list-style: none;
+		flex-direction: row;
+		flex-flow: row nowrap;
+		-webkit-overflow-scrolling: touch;
+	}
+
+	ul li {
+		margin-right: $spacing;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			margin-right: $spacing--small;
+		}
+
+		&:last-child {
+			margin-right: 0;
+		}
+
+		.a-button {
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				padding: $spacing--small 15px;
+				margin: 2px;
+			}
+		}
+	}
+}

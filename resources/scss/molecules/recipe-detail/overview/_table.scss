@@ -1,0 +1,53 @@
+/**************************************************************************************************
+*   Recipe Detail: Table
+**************************************************************************************************/
+.m-recipe-info__table {
+	margin: $spacing 0 0;
+	text-align: left;
+	border-top: 1px solid $color--dustyGrey;
+	border-bottom: 1px solid $color--dustyGrey;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		margin: 0;
+	}
+
+	@media print {
+		margin: 0 0 $spacing;
+	}
+
+	.col {
+		border-right: 1px solid $color--dustyGrey;
+
+		&:last-child {
+			border-right: none;
+		}
+	}
+
+	ul {
+		padding: $spacing 0;
+		margin-bottom: 0;
+		list-style: none;
+	}
+
+	ul li {
+		padding: 0 $spacing;
+		margin-bottom: $spacing--small;
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			padding: 0;
+		}
+	}
+
+	label, span {
+		margin-bottom: 0;
+	}
+
+	&--link{
+		text-decoration: underline;
+		color: $color--maroonFlush;
+	}
+}

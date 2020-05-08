@@ -1,0 +1,213 @@
+/**************************************************************************************************
+*   Related Article and Recipe
+**************************************************************************************************/
+.related-card{
+	margin: $spacing * 2 0;
+	&__box{
+		min-height: 140px;
+		background-color: rgba(221, 221, 221, 0.5);
+		border-top: 4px solid #f15a38;
+
+		&--title{
+			font-size: 18px;
+			line-height: 1.11;
+			font-weight: 600;
+			padding: 24px 20px;
+
+			.icon-afn-star,
+			.icon-afn-grocerylist{
+				font-size: 28px;
+			}
+
+			&-text{
+				vertical-align: top;
+			}
+		}
+	}
+
+	&__content{
+		padding: 0 $spacing;
+		margin-top: -75px;
+
+		.white-box{
+			background-color: $color--white;
+		}
+
+		&--wrap{
+			@include bp('min-width', $breakpoint--tabletPortrait){
+				height: 125px;
+			}
+
+			.row.no-gutters{
+				@include bp('min-width', $breakpoint--tabletPortrait){
+					height: 100%;
+				}
+			}
+
+			.related-card__desc{
+				padding: 14px $spacing;
+
+				.related-card__icon{
+					img{
+						height: 29px;
+						width: auto;
+						margin-bottom: 15px;
+						display: inline-block;
+
+						@include bp('max-width', $breakpoint--mobileLarge){
+							height: 20px;
+						}
+					}
+
+					padding-right: 10px;
+				}
+
+				.title{
+					color: $color--inkBlack;
+					font-size: 18px;
+					font-weight: bold;
+					line-height: 1.5;
+					margin: 0;
+
+					&.small-card{
+						font-size: 14px;
+						padding: 0;
+					}
+
+					@include bp('max-width', $breakpoint--mobileLarge){
+						font-size: 14px;
+						margin-bottom: 0;
+					}
+
+					&.clamp-4{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						-webkit-box-orient: vertical;
+						display: -webkit-box;
+						-webkit-line-clamp: 4;
+					}
+
+					&.clamp-2{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						-webkit-box-orient: vertical;
+						display: -webkit-box;
+						-webkit-line-clamp: 2;
+					}
+
+				}
+			}
+
+			.a-bg-img{
+				@include bp('min-width', $breakpoint--tabletPortrait){
+					height: 100%;
+				}
+
+				&.small-card{
+					padding-top: 80%;
+				}
+
+				@include bp('max-width', $breakpoint--tabletPortrait){
+					padding-top: 83.5%;
+				}
+
+				@include bp('max-width', $breakpoint--mobileLarge){
+					padding-top: 75.5%;
+				}
+			}
+		}
+
+		.slick-item{
+			padding: 0 $spacing 0 0;
+			@include bp('max-width', $breakpoint--tabletPortrait){
+				height: 125px;
+				padding: 0 $spacing--small 0 0;
+			}
+		}
+
+		.slick-item__faded{
+			opacity: 0.2;
+		}
+
+		.slick-next{
+			right: 20px;
+			border-radius: 50%;
+			top: 50%;
+			width: 50px;
+			height: 50px;
+			background-color: $color--maroonFlush;
+
+			&.slick-disabled{
+				display: none !important;
+			}
+
+			&:before{
+				content: "\e918";
+				font-family: afn-icons;
+				color: $color--white;
+				opacity: 1;
+			}
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				right: 0;
+				top: 150px;
+				width: 30px;
+				height: 30px;
+				background-color: #F15A38;
+			}
+		}
+
+		.slick-prev{
+			left: 20px;
+			border-radius: 50%;
+			top: 50%;
+			width: 50px;
+			height: 50px;
+			background-color: $color--maroonFlush;
+			z-index: 9;
+
+			&.slick-disabled{
+				display: none !important;
+			}
+
+			&:before{
+				content: "\e917";
+				font-family: afn-icons;
+				color: $color--white;
+				opacity: 1;
+			}
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				left: auto;
+				right: 45px;
+				top: 150px;
+				width: 30px;
+				height: 30px;
+				background-color: #F15A38;
+			}
+		}
+
+		.slick-dots{
+			width: auto;
+			text-align: left;
+			bottom: -35px;
+
+			li{
+				margin: 0;
+
+				button{
+					&:before{
+						font-size: 10px;
+					}
+				}
+
+				&.slick-active{
+					button:before{
+						color: #F15A38;
+					}
+				}
+			}
+
+		}
+	}
+}

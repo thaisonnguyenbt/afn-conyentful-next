@@ -1,0 +1,46 @@
+/**************************************************************************************************
+*   Content Box: Small
+**************************************************************************************************/
+.m-content-box.-small {
+	margin: 0 0 $spacing--medium;
+	background: $color--white;
+
+	.m-content-box__content {
+		width: 100%;
+		padding: $spacing;
+		text-align: left;
+
+		.cmp-title__text {
+			@include font-size(20);
+			margin: 0;
+		}
+	}
+
+	.m-content-box__copy span {
+		display: -webkit-box;
+		overflow: hidden;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+	}
+
+	.m-content-box__copy a {
+		padding-top: $spacing--small;
+	}
+}
+
+.no-gap-both .m-content-box.-small {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.no-gap-top .m-content-box.-small {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.no-gap-bottom .m-content-box.-small {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}

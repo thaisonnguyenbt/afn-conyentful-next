@@ -1,0 +1,12 @@
+/**************************************************************************************************
+*   Tooltip (Bootstrap)
+**************************************************************************************************/
+.afn .tooltip-inner {
+	@include font-size(12);
+	text-transform: uppercase;
+}
+
+// .afn .tooltip.bs-tooltip-auto[x-placement^=top] .arrow::before,
+// .afn .tooltip.bs-tooltip-top .arrow::before {
+//     border-top-color: $color--maroonFlush;
+// }

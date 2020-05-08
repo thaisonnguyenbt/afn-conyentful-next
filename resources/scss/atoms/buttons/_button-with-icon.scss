@@ -1,0 +1,70 @@
+/**************************************************************************************************
+*   Button: Button with Icon
+**************************************************************************************************/
+
+.a-button.-withIcon {
+
+	@include font-size(17);
+	padding: $spacing--small $spacing--medium;
+	color: $color--white;
+	background:  $color--maroonFlush;
+	border: none;
+	border-radius: 25px;
+	outline: 0;
+	transition: background 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+	&:focus {
+		outline: 0;
+	}
+
+	&:hover {
+		background: $color--mandy;
+	}
+
+	&.-disabled {
+		display: none;
+		cursor: not-allowed;
+		flex-direction: row;
+		align-items: center;
+
+		@include bp('max-width', $breakpoint--tabletLandscape - 1) {
+			margin: 0 auto;
+		}
+
+		&.active {
+			display: flex;
+		}
+
+		&:hover {
+			background: $color--maroonFlush;
+		}
+
+		.button__icon {
+			position: relative;
+			padding-right: $spacing;
+			margin-right: $spacing--tiny;
+
+			span {
+				position: absolute;
+				top: 50%;
+				left: 0;
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	@include bp('max-width', $breakpoint--mobileLarge) {
+		@include font-size(14);
+	}
+
+	.button__icon .a-afnIcon {
+		margin-top: -3px;
+		margin-right: 5px;
+
+		&.-bookmark.-filled path {
+			fill: transparent;
+			stroke: $color--white;
+			stroke-width: 2px;
+		}
+	}
+}

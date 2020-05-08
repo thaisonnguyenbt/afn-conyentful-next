@@ -1,0 +1,10 @@
+/**************************************************************************************************
+*   Recipe Detail: Overview - Save Recipe (Not desktop)
+**************************************************************************************************/
+.m-recipe-info__options.not-desktop {
+	padding: $spacing 0;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		text-align: center;
+	}
+}

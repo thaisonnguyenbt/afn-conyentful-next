@@ -1,0 +1,244 @@
+/**************************************************************************************************
+*   Fonts: AFN Icons
+**************************************************************************************************/
+
+ @font-face {
+	font-family: 'afn-icons';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../resources/fonts/afn-icons/afn-icons.eot');
+	src: url('../resources/fonts/afn-icons/afn-icons.eot?#iefix') format('embedded-opentype'),
+		url('../resources/fonts/afn-icons/afn-icons.ttf') format('truetype'),
+		url('../resources/fonts/afn-icons/afn-icons.woff') format('woff'),
+		url('../resources/fonts/afn-icons/afn-icons.woff2') format('woff2'),
+		url('../resources/fonts/afn-icons/afn-icons.svg#fn-icons') format('svg');
+	 font-display: swap;
+}
+
+[class^="icon-"],
+[class*=" icon-"] {
+	/* use !important to prevent issues with browser extensions that change fonts */
+	font-family: 'afn-icons' !important;
+	font-style: normal;
+	font-weight: normal;
+	line-height: 1;
+	text-transform: none;
+	speak: none;
+	font-variant: normal;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-afn-add:before {
+	content: "\e900";
+}
+
+.icon-afn-calendar:before {
+	content: "\e901";
+}
+
+.icon-afn-check:before {
+	content: "\e902";
+}
+
+.icon-afn-close:before {
+	content: "\e903";
+}
+
+.icon-afn-comment:before {
+	content: "\e904";
+}
+
+.icon-afn-down:before {
+	content: "\e905";
+}
+
+.icon-afn-expand:before {
+	content: "\e906";
+}
+
+.icon-afn-facebook:before {
+	content: "\e907";
+}
+
+.icon-afn-flag:before {
+	content: "\e908";
+}
+
+.icon-afn-folder:before {
+	content: "\e909";
+}
+
+.icon-afn-google-plus:before {
+	content: "\e90a";
+}
+
+.icon-afn-grid-view:before {
+	content: "\e90b";
+}
+
+.icon-afn-grocerylist-add:before {
+	content: "\e90c";
+}
+
+.icon-afn-grocerylist-delete:before {
+	content: "\e90d";
+}
+
+.icon-afn-grocerylist:before {
+	content: "\e90e";
+}
+
+.icon-afn-half-star:before {
+	content: "\e90f";
+}
+
+.icon-afn-layers:before {
+	content: "\e910";
+}
+
+.icon-afn-left:before {
+	content: "\e911";
+}
+
+.icon-afn-like:before {
+	content: "\e912";
+}
+
+.icon-afn-list-view:before {
+	content: "\e913";
+}
+
+.icon-afn-load:before {
+	content: "\e914";
+}
+
+.icon-afn-mail:before {
+	content: "\e915";
+}
+
+.icon-afn-navigate-down:before {
+	content: "\e916";
+}
+
+.icon-afn-navigate-left:before {
+	content: "\e917";
+}
+
+.icon-afn-navigate-right:before {
+	content: "\e918";
+}
+
+.icon-afn-navigate-up:before {
+	content: "\e919";
+}
+
+.icon-afn-pinterest:before {
+	content: "\e91a";
+}
+
+.icon-afn-play:before {
+	content: "\e91b";
+}
+
+.icon-afn-print:before {
+	content: "\e91c";
+}
+
+.icon-afn-recipebox-add:before {
+	content: "\e91d";
+}
+
+.icon-afn-recipebox-grid:before {
+	content: "\e91e";
+}
+
+.icon-afn-recipebox-list:before {
+	content: "\e91f";
+}
+
+.icon-afn-recipebox:before {
+	content: "\e920";
+}
+
+.icon-afn-record:before {
+	content: "\e921";
+}
+
+.icon-afn-right:before {
+	content: "\e922";
+}
+
+.icon-afn-rows:before {
+	content: "\e923";
+}
+
+.icon-afn-search:before {
+	content: "\e924";
+}
+
+.icon-afn-share:before {
+	content: "\e925";
+}
+
+.icon-afn-star:before {
+	content: "\e926";
+}
+
+.icon-afn-trash:before {
+	content: "\e927";
+}
+
+.icon-afn-twitter:before {
+	content: "\e928";
+}
+
+.icon-afn-up:before {
+	content: "\e929";
+}
+
+.icon-afn-upright:before {
+	content: "\e92a";
+}
+
+.icon-afn-video:before {
+	content: "\e92b";
+}
+
+.icon-afn-view:before {
+	content: "\e92c";
+}
+
+.icon-afn-write:before {
+	content: "\e92d";
+}
+
+.icon-afn-cta:before {
+	content: "\e92e";
+}
+
+.icon-afn-directions:before {
+	content: "\e92f";
+}
+
+.icon-afn-phone:before {
+	content: "\e930";
+}
+
+.icon-afn-website:before {
+	content: "\e931";
+}
+
+.icon-afn-snapchat:before {
+	content: "\e932";
+}
+
+.icon-afn-instagram:before {
+	content: "\e933";
+}
+
+.icon-afn-youtube:before {
+	content: "\e934";
+}

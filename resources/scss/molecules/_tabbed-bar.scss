@@ -1,0 +1,51 @@
+// ======================
+// Tabbed Bar
+// ======================
+
+.tabbed-bar {
+    width: 100%;
+    height: 60px;
+	z-index: 1000;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    display: none;
+    justify-content: space-evenly;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0px -11px 20px 0px #4040406b;
+    transition: bottom 400ms ease-in;
+    border-top: 1px solid #dadada;
+
+    @media (min-width: 1024px) {
+        display: none;
+    }
+    @media (max-width: 996px) {
+        display: flex;
+    }
+
+    &__item {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 5px 10px;
+        cursor: pointer;
+
+        &:nth-child(2) {
+            border-left: 1px solid #dadada;
+            border-right: 1px solid #dadada;
+        }
+    }
+
+    &__icon {
+        object-fit: cover;
+        height: 24px;
+        width: auto;
+    }
+
+    &__name {
+        font-size: .8rem;
+    }
+}

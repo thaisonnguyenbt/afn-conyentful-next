@@ -1,0 +1,88 @@
+/**************************************************************************************************
+*   Styleguide: Color Palette
+**************************************************************************************************/
+.m-colorPalette {
+	margin: $spacing 0;
+	.m-colorPalette__box {
+		width: 100%
+	}
+
+	.m-colorPalette__box .m-colorPalette__color {
+		width: 100%;
+		min-height: 100px;
+		margin-bottom: $spacing--small;
+		box-shadow: 1px 1px 7px $color--dark;
+	}
+
+	.m-colorPalette__box {
+		&.-maroonFlush {
+			color: $color--maroonFlush;
+			.m-colorPalette__color {
+				background-color: $color--maroonFlush;
+			}
+		}
+
+		&.-brickRed {
+			color: $color--brickRed;
+			.m-colorPalette__color {
+				background-color: $color--brickRed;
+			}
+		}
+
+		&.-mandy {
+			color: $color--mandy;
+			.m-colorPalette__color {
+				background-color: $color--mandy;
+			}
+		}
+
+		&.-maroonFlushAlt {
+			color: $color--maroonFlushAlt;
+			.m-colorPalette__color {
+				background-color: $color--maroonFlushAlt;
+			}
+		}
+
+		&.-froly {
+			color: $color--froly;
+			.m-colorPalette__color {
+				background-color: $color--froly;
+			}
+		}
+
+		&.-flamingo {
+			color: $color--flamingo;
+			.m-colorPalette__color {
+				background-color: $color--flamingo;
+			}
+		}
+
+		&.-black {
+			color: $color--black;
+			.m-colorPalette__color {
+				background-color: $color--black;
+			}
+		}
+
+		&.-grey {
+			color: $color--black;
+			.m-colorPalette__color {
+				background-color: $color--grey;
+			}
+		}
+
+		&.-white {
+			color: $color--black;
+			.m-colorPalette__color {
+				background-color: $color--white;
+			}
+		}
+
+		&.-blackAlt {
+			color: $color--blackAlt;
+			.m-colorPalette__color {
+				background-color: $color--blackAlt;
+			}
+		}
+	}
+}

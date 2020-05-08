@@ -1,0 +1,274 @@
+/**************************************************************************************************
+*   Pagination Recipe and Article
+**************************************************************************************************/
+.m-default-pagination-img {
+	position: relative;
+	margin: $spacing/2 0 $spacing--medium;
+	flex-direction: row;
+	align-self: center;
+
+	@include bp('max-width', $breakpoint--mobileLarge){
+		//margin-bottom: $spacing * 7;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	.m-default-pagination-img__prev {
+		.pagination-card{
+			background-color: $color--white;
+			margin-right: 10px;
+			height: 100%;
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				height: 100%;
+				margin-right: 5px;
+			}
+
+			&:hover{
+				background-color: $color--lightGrey;
+			}
+
+			a{
+				color: $color--inkBlack;
+			}
+
+			.a-bg-img{
+				padding-top: 80%;
+
+				@include bp('max-width', $breakpoint--laptop){
+					padding-top: 100%;
+				}
+
+				@include bp('max-width', $breakpoint--laptop - 300){
+					padding-top: 129%;
+				}
+
+				@include bp('max-width', $breakpoint--tabletLandscape){
+					padding-top: 80%;
+				}
+
+				@include bp('max-width', 908){
+					padding-top: 100%;
+				}
+
+				@include bp('max-width', $breakpoint--mobileLarge){
+					padding-top: 60%;
+				}
+			}
+
+			.icon-afn-navigate-left{
+				position: absolute;
+				text-align: left;
+				color: $color--maroonFlush;
+				font-size: 24px;
+				left: 10px;
+				top: 40%;
+
+				@include bp('max-width', $breakpoint--tabletPortrait){
+					top: 50%;
+				}
+
+				&.article{
+					@include bp('max-width', $breakpoint--mobileLarge){
+						top: 10px;
+					}
+				}
+			}
+
+			&__body{
+				padding: 15px 20px 0 40px;
+				text-align: right;
+
+				.card-title{
+					font-size: 14px;
+					color: $color--maroonFlush;
+				}
+
+				.card-text{
+					font-size: 18px;
+					font-weight: 600;
+					line-height: 1.22;
+
+					&.clamp-3{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						-webkit-box-orient: vertical;
+						display: -webkit-box;
+						-webkit-line-clamp: 3;
+					}
+				}
+
+				@include bp('max-width', $breakpoint--mobileLarge){
+					.card-title{
+						font-size: 12px;
+					}
+
+					.card-text{
+						font-size: 16px;
+					}
+				}
+
+			}
+
+			&__img{
+				width: 100%;
+				height: 100px;
+			}
+
+			&.prev-only{
+				.a-bg-img{
+					padding-top: 55.4%;
+
+					@include bp('max-width', $breakpoint--mobileLarge){
+						padding-top: 37.54%;
+					}
+				}
+
+				.icon-afn-navigate-left{
+					@include bp('max-width', $breakpoint--mobileLarge){
+						top: 40%;
+					}
+				}
+			}
+		}
+
+		span:last-child {
+			margin-left: $spacing--small;
+		}
+	}
+
+	.m-default-pagination-img__next {
+		.pagination-card{
+			background-color: $color--white;
+			margin-left: 10px;
+			height: 100%;
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				height: 100%;
+				margin-left: 5px;
+			}
+
+			&:hover{
+				background-color: $color--lightGrey;
+			}
+
+			a{
+				color: $color--inkBlack;
+			}
+
+			.a-bg-img{
+				padding-top: 80%;
+
+				@include bp('max-width', $breakpoint--laptop){
+					padding-top: 100%;
+				}
+
+				@include bp('max-width', $breakpoint--laptop - 300){
+					padding-top: 129%;
+				}
+
+				@include bp('max-width', $breakpoint--tabletLandscape){
+					padding-top: 80%;
+				}
+
+				@include bp('max-width', 908){
+					padding-top: 100%;
+				}
+
+				@include bp('max-width', $breakpoint--mobileLarge){
+					padding-top: 60%;
+				}
+			}
+
+			.icon-afn-navigate-right{
+				position: absolute;
+				text-align: right;
+				color: $color--maroonFlush;
+				font-size: 24px;
+				right: 10px;
+				top: 40%;
+
+				@include bp('max-width', $breakpoint--tabletPortrait){
+					top: 50%;
+				}
+
+				&.article{
+					@include bp('max-width', $breakpoint--mobileLarge){
+						top: 10px;
+					}
+				}
+			}
+
+			&__body{
+				padding: 15px 40px 0 20px;
+
+				.card-title{
+					font-size: 14px;
+					color: $color--maroonFlush;
+				}
+
+				.card-text{
+					font-size: 18px;
+					font-weight: 600;
+					line-height: 1.22;
+
+					&.clamp-3{
+						overflow: hidden;
+						text-overflow: ellipsis;
+						-webkit-box-orient: vertical;
+						display: -webkit-box;
+						-webkit-line-clamp: 3;
+					}
+				}
+
+				@include bp('max-width', $breakpoint--mobileLarge){
+					.card-title{
+						font-size: 12px;
+					}
+
+					.card-text{
+						font-size: 16px;
+					}
+				}
+			}
+
+			&__img{
+				width: 100%;
+				height: 100px;
+			}
+
+			&.next-only{
+				.a-bg-img{
+					padding-top: 55.4%;
+
+					@include bp('max-width', $breakpoint--mobileLarge){
+						padding-top: 37.54%;
+					}
+				}
+
+				.icon-afn-navigate-right{
+					@include bp('max-width', $breakpoint--mobileLarge){
+						top: 40%;
+					}
+				}
+			}
+		}
+
+		span:first-child {
+			margin-right: $spacing--small;
+		}
+	}
+}
+
+
+//IE 10 and 11
+@media screen and (-ms-high-contrast: none) {
+
+}
+
+//Edge
+@supports (-ms-user-select: none) {
+
+}

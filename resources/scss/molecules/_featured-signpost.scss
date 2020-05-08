@@ -1,0 +1,67 @@
+/**************************************************************************************************
+*  Featured Signpost
+**************************************************************************************************/
+.m-featured-signpost {
+	position: relative;
+
+	.m-featured-signpost__background {
+		position: relative;
+
+		.cmp-image:before {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0,0,0,.3);
+			content: '';
+		}
+	}
+
+	.m-featured-signpost__overlay {
+		position: absolute;
+		bottom: 50px;
+		left: 0;
+		width: 100%;
+		padding: $spacing--medium;
+		color: $color--white;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			bottom: 30px;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			bottom: 40px;
+			padding: $spacing--small $spacing;
+		}
+
+		.a-featured-signpost__link {
+			&:hover, &:focus, &:active, &:visited {
+				color: $color--maroonFlush;
+				text-decoration: underline;
+			}
+		}
+
+		.a-featured-signpost__link .cmp-title {
+			padding: $spacing 0 $spacing--small;
+			margin: 0;
+
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				padding: $spacing--small 0;
+			}
+
+			.cmp-title__text {
+				margin: 0;
+				line-height: 1em;
+				color: $color--white;
+			}
+		}
+
+		.a-featured-signpost__subtitle {
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				display: none;
+			}
+		}
+	}
+}

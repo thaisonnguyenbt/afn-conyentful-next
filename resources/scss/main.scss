@@ -1,0 +1,159 @@
+/**
+* Using ABEM (Atomic BEM)
+* Format: A-B__E -M (Atomic-Block__Element -Modifier)
+* https://css-tricks.com/abem-useful-adaptation-bem/
+* https://dan503.github.io/Atomic-Categorizer/
+*/
+
+@import './base/breakpoints';
+@import './base/color-palette';
+@import './base/fonts';
+@import './base/icons';
+@import './base/mixins';
+@import './base/spacings';
+@import './base/typography';
+@import './base/variables';
+
+/**
+ * Atoms
+ */
+ @import './atoms/aem-core-components/breadcrumbs';
+ @import './atoms/animated';
+ @import './atoms/background-image';
+ @import './atoms/buttons/button-link';
+ @import './atoms/buttons/button-primary';
+ @import './atoms/buttons/button-secondary';
+ @import './atoms/buttons/button-with-icon';
+ @import './atoms/buttons/icon-button';
+ @import './atoms/buttons/text-button';
+ @import './atoms/category-tag';
+ @import './atoms/category-tag-round';
+ @import './atoms/dot';
+ @import './atoms/footer/footer-footnote';
+ @import './atoms/footer/footer-logo';
+ @import './atoms/header/avatar';
+ @import './atoms/header/bookmark';
+ @import './atoms/header/hamburger-menu-button';
+ @import './atoms/header/no-avatar';
+ @import './atoms/header/profile';
+ @import './atoms/loading-spinner';
+ @import './atoms/page-title';
+ @import './atoms/social-media/icons';
+ @import './atoms/tooltip';
+
+/**
+ * Molecules
+ */
+@import './molecules/category-tags';
+@import './molecules/commercial-tile';
+@import './molecules/content-box/content-box-large';
+@import './molecules/content-box/content-box-small';
+@import './molecules/docked-bar';
+@import './molecules/tabbed-bar';
+@import './molecules/scrollable-screens';
+@import './molecules/featured-signpost';
+@import './molecules/filter-bar';
+@import './molecules/footer/footer-form';
+@import './molecules/footer/footer-menulist';
+@import './molecules/header/logo';
+@import './molecules/header/menu-list';
+@import './molecules/header/mobile-hamburger-menu';
+@import './molecules/header/mobile-menu-profile';
+@import './molecules/header/search';
+@import './molecules/header/social-media-list';
+@import './molecules/header/sub-menu';
+@import './molecules/icon-text';
+@import './molecules/listing-group';
+@import './molecules/listing-nav-bar';
+@import './molecules/listing-pagination';
+@import './molecules/listing-search-bar';
+@import './molecules/listing/numbered';
+@import './molecules/notification-banner';
+@import './molecules/pagination';
+@import './molecules/pagination-card';
+@import './molecules/ratings';
+@import './molecules/recipe-detail/overview/general-info';
+@import './molecules/recipe-detail/overview/hero';
+@import './molecules/recipe-detail/overview/logo';
+@import './molecules/recipe-detail/overview/save-recipe';
+@import './molecules/recipe-detail/overview/table';
+@import './molecules/recipe-detail/recipe-detail-list';
+@import './molecules/recipe-detail/steps/arrange-and-serve';
+@import './molecules/recommendation-signpost';
+@import './molecules/recommendations-categories';
+@import './molecules/signpost';
+@import './molecules/social-media-sharing-list';
+@import './molecules/sticky-container';
+@import './molecules/styleguide/color-palette';
+@import './molecules/video-single';
+@import './molecules/view-tabs';
+@import './molecules/vue-dropdown';
+@import './molecules/ad-banners';
+@import './molecules/related-card';
+@import './molecules/upload-photo';
+
+/**
+ * Organisms
+ */
+ @import './organisms/accordion';
+ @import './organisms/bookmarks/prompt-login';
+ @import './organisms/carousels/default-carousel';
+ @import './organisms/carousels/mixed-carousel';
+ @import './organisms/comments';
+ @import './organisms/content-feed';
+ @import './organisms/cookie-policy/cookie-policy';
+ @import './organisms/footer/footer';
+ @import './organisms/forms/gigya-registration-login';
+ @import './organisms/header/gigya-profile';
+ @import './organisms/header/header';
+ @import './organisms/header/mobile-header';
+ @import './organisms/listing';
+ @import './organisms/map';
+ @import './organisms/modal';
+ @import './organisms/ordered-listing';
+ @import './organisms/overview';
+ @import './organisms/ratings';
+ @import './organisms/recipe';
+ @import './organisms/recommendations';
+ @import './organisms/search-results';
+ @import './organisms/side-panel';
+ @import './organisms/tab-panel';
+ @import './organisms/table';
+ @import './organisms/user-information';
+
+/**
+ * Templates
+ */
+ @import './templates/default';
+
+/**
+ * Pages
+ */
+ @import './pages/bookmarks';
+ @import './pages/recipe';
+
+body {
+    background: $color--grey !important;
+}
+
+.cmp-image img {
+    width: 100%;
+}
+
+img {
+    max-width: 100%;
+}
+
+.afn a {
+    color: $color--mandy;
+}
+
+.a-category-tag span {
+    @include font-size(15);
+    padding: 7px 15px;
+    color: $color--white;
+    text-transform: uppercase;
+    background: $color--mandy;
+    border: 1px solid $color--mandy;
+    border-radius: 25px;
+}

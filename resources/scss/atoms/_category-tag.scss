@@ -1,0 +1,13 @@
+/**************************************************************************************************
+*   Category Tag
+**************************************************************************************************/
+
+.a-category-tag span {
+	@include font-size(15);
+	color: $color--white;
+	text-transform: uppercase;
+
+	@include bp('max-width', $breakpoint--mobileLarge) {
+		@include font-size(14);
+	}
+}

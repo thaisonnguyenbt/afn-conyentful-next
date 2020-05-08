@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="21px" height="21px" viewBox="0 0 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 58 (84663) - https://sketch.com -->
+    <title>icon / user logged in</title>
+    <desc>Created with Sketch.</desc>
+    <g id="Registration---Login" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home-page---Signed-in---dropdown---desktop" transform="translate(-1233.000000, -24.000000)">
+            <g id="header">
+                <g id="Main-nav">
+                    <g id="account" transform="translate(1231.000000, 22.000000)">
+                        <g id="icon-/-user-logged-in-/-dot">
+                            <polygon id="Path" points="0 0 24 0 24 24 0 24"></polygon>
+                            <path d="M12,2 C17.52,2 22,6.48 22,12 C22,13.8229642 21.511397,15.5325028 20.6580922,17.0047144 C20.6051033,17.0011642 20.5526876,17 20.5,17 C18.5670034,17 17,18.5670034 17,20.5 L17.0047144,20.6580922 C15.5325028,21.511397 13.8229642,22 12,22 C6.48,22 2,17.52 2,12 C2,6.48 6.48,2 12,2 Z M12,12.9 C10,12.9 6.03,13.99 6,15.98 C7.29,17.92 9.5,19.2 12,19.2 C14.5,19.2 16.71,17.92 18,15.98 C17.97,13.99 13.99,12.9 12,12.9 Z M12,5 C10.34,5 9,6.34 9,8 C9,9.66 10.34,11 12,11 C13.66,11 15,9.66 15,8 C15,6.34 13.66,5 12,5 Z M20.5,23 C21.8807119,23 23,21.8807119 23,20.5 C23,19.1192881 21.8807119,18 20.5,18 C19.1192881,18 18,19.1192881 18,20.5 C18,21.8807119 19.1192881,23 20.5,23 Z" id="Combined-Shape" fill="#CCCDCF" fill-rule="nonzero"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

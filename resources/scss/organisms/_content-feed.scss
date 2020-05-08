@@ -1,0 +1,39 @@
+/**************************************************************************************************
+*   Content Feed
+**************************************************************************************************/
+.o-content-feed {
+	margin: 0 0 $spacing--medium;
+	text-align: center;
+
+	.m-content-feed__lowerBracket .col {
+		display: flex;
+		flex-basis: 0%;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			width: 100%;
+			max-width: 100%;
+			flex: 0 0 100%;
+		}
+	}
+
+	.m-content-box {
+		margin: 0 0 $spacing;
+	}
+}
+
+.no-gap-both .o-content-feed {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.no-gap-top .o-content-feed {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.no-gap-bottom .o-content-feed {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}

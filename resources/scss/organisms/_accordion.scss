@@ -1,0 +1,98 @@
+/**************************************************************************************************
+*   Accordion
+**************************************************************************************************/
+.o-accordion {
+	.o-accordion-card {
+		padding: $spacing;
+		border-bottom: 1px solid $color--dustyGrey;
+
+		&:last-child {
+			border: none;
+		}
+
+		.m-accordion__button {
+			position: relative;
+			display: flex;
+			width: 100%;
+			padding: 0;
+			background: transparent;
+			border: none;
+			flex-direction: row;
+			align-items: center;
+
+			&:focus {
+				outline: 0;
+			}
+
+			.m-accordion__buttonLabel {
+				@include font-size(16);
+			}
+
+			.m-accordion__icon {
+				position: relative;
+				margin-left: auto;
+
+				span[class^='icon-afn'], span[class*=' icon-afn'] {
+					@include font-size(20);
+					position: relative;
+					color: $color--white;
+
+					&:before {
+						position: absolute;
+						top: 50%;
+						left: -32px;
+						z-index: 2;
+						width: 33px;
+						height: 33px;
+						background: $color--maroonFlush;
+						border-radius: 50%;
+						content: '';
+						transform: translateY(-50%);
+					}
+
+					&:after {
+						z-index: 3;
+						margin-top: 3px;
+						margin-left: -25px;
+						color: $color--white;
+					}
+				}
+
+				.icon-afn-navigate-up:after {
+					content: "\e919";
+				}
+
+				.icon-afn-navigate-down:after {
+					content: "\e916";
+				}
+			}
+
+			&[aria-expanded="false"] .icon-afn-navigate-down {
+				display: flex;
+			}
+
+			&[aria-expanded="false"] .icon-afn-navigate-up {
+				display: none;
+			}
+
+			&[aria-expanded="true"] .icon-afn-navigate-down {
+				display: none;
+			}
+
+			&[aria-expanded="true"] .icon-afn-navigate-up {
+				display: flex;
+
+				&:before {
+					margin-top: 1px;
+				}
+			}
+		}
+
+		.m-accordion-list {
+			display: flex;
+			padding: $spacing 0 0;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+	}
+}

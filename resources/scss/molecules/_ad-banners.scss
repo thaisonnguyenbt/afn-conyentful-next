@@ -1,0 +1,18 @@
+/**************************************************************************************************
+*  Ad Banners
+**************************************************************************************************/
+.m-ad-banner-container {
+	margin: 0 auto;
+	text-align: center;
+
+	&.top {
+		margin-top: $spacing;
+	}
+	&.bottom {
+		margin-bottom: $spacing;
+	}
+
+	@media print {
+		display: none;
+	}
+}

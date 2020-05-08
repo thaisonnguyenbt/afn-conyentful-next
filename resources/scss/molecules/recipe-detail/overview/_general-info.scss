@@ -1,0 +1,92 @@
+/**************************************************************************************************
+*   Recipe Detail: Overview - General Info
+**************************************************************************************************/
+.m-recipe-overview__generalInfo {
+	padding: $spacing--medium-large $spacing--medium 30px $spacing--medium;
+	text-align: center;
+
+	.m-recipe-info__mobileWrapper{
+		position: relative;
+		margin-bottom: $spacing--medium;
+	}
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding: $spacing;
+		.m-recipe-info__mobileWrapper {
+
+			display: inline-flex;
+			margin-bottom: $spacing--small;
+			flex-direction: row;
+		}
+	}
+
+	.m-ratings {
+		margin-bottom: $spacing--small;
+
+		@media print {
+			display: none;
+		}
+	}
+
+	.m-content__blurb {
+		margin-bottom: 30px;
+
+		@media print {
+			margin-bottom: 0;
+		}
+
+		.m-content__copy {
+			line-height: 30px;
+			text-align: center;
+		}
+
+		&.-collapsed .-full {
+			display: none;
+
+			@media print {
+				display: block;
+			}
+		}
+
+		.-ellipsis {
+			display: none;
+		}
+
+		&.-collapsed .-ellipsis {
+			display: block;
+
+			@media print {
+				display: none;
+			}
+		}
+
+		button {
+			@media print {
+				display: none;
+			}
+		}
+	}
+
+	.m-recipe-info__options.desktop {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+		justify-content: center;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			display: none;
+		}
+
+		@media print {
+			display: none;
+		}
+
+		.a-button:first-child {
+			margin-right: $spacing--small;
+		}
+
+		.a-button:last-child {
+			margin-left: $spacing--small;
+		}
+	}
+}

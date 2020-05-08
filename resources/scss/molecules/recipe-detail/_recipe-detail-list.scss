@@ -1,0 +1,75 @@
+/**************************************************************************************************
+*   Ingredients List
+**************************************************************************************************/
+.m-recipeDetailList {
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding-bottom: $spacing--huge;
+	}
+
+	ul {
+		padding-left: 0;
+		list-style: none;
+	}
+
+	.m-recipeDetailList__header {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		&.desktop {
+			display: flex;
+			@include bp('max-width', $breakpoint--tabletLandscape) {
+				display: none;
+			}
+		}
+
+		.cmp-title__text {
+			margin-bottom: 0;
+		}
+
+		button {
+			margin-left: auto;
+
+			@media print {
+				display: none;
+			}
+		}
+	}
+
+	.m-recipeDetailList__item {
+		padding: 10px 0;
+		margin-bottom: 0;
+		line-height: 22px;
+		border-bottom: 1px solid $color--lightGrey;
+
+		span, p {
+			@include font-size(16);
+			display: block;
+			margin-bottom: 0.5rem;
+			line-height: 22px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+
+			i {
+				@include font-size(16);
+				display: block;
+				margin-bottom: 0;
+				line-height: 22px;
+			}
+		}
+
+		.a-socialMediaIcon {
+			width: 100%;
+			padding-left: $spacing--medium;
+
+			&:after {
+				top: 0;
+				left: 0;
+				color: $color--black;
+				transform: none;
+			}
+		}
+	}
+}

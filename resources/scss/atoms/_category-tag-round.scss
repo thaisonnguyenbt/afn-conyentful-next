@@ -1,0 +1,30 @@
+/**************************************************************************************************
+*   Category Tag (Round)
+**************************************************************************************************/
+
+.category-tags-round .a-category-tag {
+	@include font-size(18);
+
+	&:focus {
+		outline: 0;
+	}
+
+	@include bp('max-width', $breakpoint--mobileLarge) {
+		@include font-size(14);
+	}
+
+	img {
+		margin: 0 16px;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			margin: 0 8px;
+		}
+	}
+
+	.a-category-tag__title{
+		color: $color--maroonFlush;
+		text-transform: none;
+		text-decoration: underline;
+		cursor: pointer;
+	}
+}

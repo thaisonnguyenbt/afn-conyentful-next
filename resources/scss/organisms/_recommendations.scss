@@ -1,0 +1,35 @@
+/**************************************************************************************************
+*  Recommendations
+**************************************************************************************************/
+.o-recommendations {
+	margin-bottom: $spacing--medium;
+
+	.m-data-listing__item {
+		margin-bottom: $spacing;
+	}
+
+	.m-recommendation-signpost {
+		height: 100%;
+	}
+
+	.m-recommendation-signpost__ratings {
+		margin-top: auto;
+	}
+}
+
+.no-gap-both .o-recommendations {
+	padding-top: 0;
+	padding-bottom: 0;
+	margin-top: 0;
+	margin-bottom: 0;
+}
+
+.no-gap-top .o-recommendations {
+	padding-top: 0;
+	margin-top: 0;
+}
+
+.no-gap-bottom .o-recommendations {
+	padding-bottom: 0;
+	margin-bottom: 0;
+}

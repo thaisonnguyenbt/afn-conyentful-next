@@ -1,0 +1,35 @@
+/**************************************************************************************************
+*  Category Tags
+**************************************************************************************************/
+.m-category-tags {
+	.m-category-tags__label{
+		@include font-size(18);
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			@include font-size(14);
+		}
+	}
+
+	.m-category-tags__list {
+		display: inline-flex;
+		padding-left: 0;
+		margin-bottom: 0;
+		list-style: none;
+		flex-direction: row;
+		flex-flow: wrap;
+	}
+
+	.m-category-tags__list li {
+		margin-bottom: $spacing;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			margin-bottom: 5px;
+		}
+
+		&:last-child{
+			img{
+				display: none;
+			};
+		}
+	}
+}

@@ -1,0 +1,37 @@
+/**************************************************************************************************
+* Arrange and Serve
+**************************************************************************************************/
+.m-recipe-arrange {
+	margin-bottom: $spacing--medium;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding: $spacing--medium 0;
+		background: $color--white;
+	}
+
+	.m-recipe-arrange__item {
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			margin: 0 15px 30px;
+		}
+
+		.m-recipe-arrange__withIcon {
+			display: flex;
+			flex-direction: row;
+		}
+
+		.m-recipe-arrange__title {
+			padding-left: $spacing--small;
+		}
+	}
+
+	.m-recipe-arrange__copy a {
+		padding: 0;
+		color: $color--maroonFlush;
+		text-decoration: underline;
+		transition: color 300ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+
+		&:hover {
+			color: $color--mandy;
+		}
+	}
+}

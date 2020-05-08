@@ -1,0 +1,14 @@
+/**************************************************************************************************
+*   Background Image
+**************************************************************************************************/
+.a-bg-img {
+	display: block;
+	padding-top: 62.5%; //3:2 image
+	overflow: hidden;
+	background-position: center;
+	background-size: cover;
+
+	&.-square {
+		padding-top: 100%;
+	}
+}

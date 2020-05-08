@@ -1,0 +1,130 @@
+/**************************************************************************************************
+*   Header: Hamburger Menu Item
+**************************************************************************************************/
+.m-hamburgerMenuItem {
+
+	padding: $spacing;
+	border-bottom: 1px solid $color--grey;
+
+	&:last-child {
+		border: none;
+	}
+
+	a, span {
+		color: $color--grey;
+	}
+
+	.m-hamburgerMenuItem__controls {
+		display: flex;
+		flex-direction: row;
+		align-items: center;
+
+		* {
+			flex-shrink: 0;
+		}
+	}
+
+	.m-hamburgerMenuItem__link {
+		color: $color--grey;
+		text-decoration: none;
+
+		&:focus,
+		&:visited,
+		&:hover,
+		&:active {
+			color: $color--grey;
+			text-decoration: none;
+		}
+	}
+
+	.m-hamburgerMenuItem__accordion {
+		position: relative;
+		display: flex;
+		padding: 0;
+		margin-left: auto;
+		background: transparent;
+		border: none;
+		flex-direction: row;
+		align-items: center;
+
+		&:focus {
+			outline: 0;
+		}
+
+		.m-hamburgerMenuItem__icon {
+			position: relative;
+			margin-left: auto;
+
+			&:before {
+				position: absolute;
+				top: 50%;
+				left: -60px;
+				z-index: -1;
+				width: 2px;
+				height: 100%;
+				border-left: 1px dashed $color--grey;
+				content: '';
+				transform: translateY(-50%);
+			}
+		}
+
+		span[class^='icon-afn'], span[class*=' icon-afn'] {
+			position: relative;
+			@include font-size(20);
+			color: $color--flamingo;
+
+			&:before {
+				margin-top: 3px;
+				margin-left: -25px;
+			}
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				left: -32px;
+				z-index: -1;
+				width: 33px;
+				height: 33px;
+				background: $color--grey;
+				border-radius: 50%;
+				content: '';
+				transform: translateY(-50%);
+			}
+		}
+
+		&[aria-expanded="false"] .icon-afn-navigate-down {
+			display: flex;
+		}
+
+		&[aria-expanded="false"] .icon-afn-navigate-up {
+			display: none;
+		}
+
+		&[aria-expanded="true"] .icon-afn-navigate-down {
+			display: none;
+		}
+
+		&[aria-expanded="true"] .icon-afn-navigate-up {
+			display: flex;
+
+			&:before {
+				margin-top: 1px;
+			}
+		}
+	}
+
+	.m-accordionMenu {
+		display: flex;
+		padding: $spacing--small 0;
+		flex-direction: column;
+
+		.m-accordionMenu__subLink {
+			padding: $spacing--small $spacing;
+		}
+
+		.m-accordionMenu__subLink.-main {
+			font-family: 'Hurme Geometric Sans Bold', serif;
+		}
+	}
+
+}

@@ -1,0 +1,55 @@
+/**************************************************************************************************
+*   Overview Section
+**************************************************************************************************/
+.o-overview {
+	text-align: center;
+
+	.a-page-title {
+		margin-bottom: $spacing--small;
+	}
+
+	.m-overview__hero,
+	.m-overview__bookmark {
+		margin-bottom: $spacing--medium;
+	}
+
+	.m-overview__bookmark {
+		.a-button.-withIcon {
+			margin: 0 auto;
+		}
+	}
+
+	.a-overview__date,
+	.m-overview__categoryTags {
+		margin-bottom: $spacing;
+	}
+
+	.m-category-tags__list {
+		margin-bottom: 0;
+	}
+
+	.m-social-sharing__label {
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			display: none;
+		}
+	}
+
+	.m-social-sharing-bar {
+		border-top: 1px solid $color--dustyGrey;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			padding: 0;
+			border: none;
+		}
+	}
+}
+
+.container .o-overview {
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		[class^="m-overview"]:not(.m-overview__hero),
+		[class^="a-overview"] {
+			padding-right: 15px;
+			padding-left: 15px;
+		}
+	}
+}

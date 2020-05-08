@@ -1,0 +1,151 @@
+/**************************************************************************************************
+*   Header: Hamburger Menu Item - Profile
+**************************************************************************************************/
+.m-hamburgerMenuItem__profile {
+	display: flex;
+	padding: $spacing 0;
+	margin: 0 $spacing;
+	border-bottom: 1px solid $color--grey;
+	flex-direction: row;
+	flex-wrap: wrap;
+	align-items: center;
+
+	a, span, button {
+		color: $color--white;
+	}
+
+	button {
+		background: transparent;
+		border: none;
+	}
+
+	button,
+	.button__icon {
+		padding: 0;
+	}
+
+	.m-hamburgerMenuItem__item {
+		display: none;
+
+		&.active {
+			display: -webkit-box;
+			display: -ms-flexbox;
+			display: flex;
+			-webkit-box-orient: horizontal;
+			-webkit-box-direction: normal;
+			-ms-flex-direction: row;
+			flex-direction: row;
+			-webkit-box-align: center;
+			-ms-flex-align: center;
+			align-items: center;
+		}
+
+		&:focus,
+		&:hover,
+		&:active {
+			outline: 0;
+		}
+
+		button {
+			&:focus,
+			&:hover,
+			&:active {
+				outline: 0;
+			}
+		}
+	}
+
+	.m-hamburgerMenuItem__signUp{
+		padding: 0 $spacing--small;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			* {
+				text-transform: uppercase;
+			}
+		}
+	}
+
+	.m-hamburgerMenuItem__logOut,
+	.m-hamburgerMenuItem__myAccount{
+		padding: $spacing $spacing--small 0;
+	}
+
+	.m-hamburgerMenuItem__logIn span {
+		&.button__copy {
+			position: relative;
+			padding: 0 $spacing--small;
+
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				text-transform: uppercase;
+			}
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				z-index: -1;
+				width: 1px;
+				height: 90%;
+				background: $color--grey;
+				content: '';
+				transform: translateY(-50%);
+			}
+		}
+	}
+
+	.m-hamburgerMenuItem__profileName {
+		span {
+			position: relative;
+			padding: 0 $spacing--small;
+
+			@include bp('max-width', $breakpoint--mobileLarge) {
+				text-transform: uppercase;
+			}
+
+			&:after {
+				position: absolute;
+				top: 50%;
+				right: 0;
+				z-index: -1;
+				width: 1px;
+				height: 90%;
+				background: $color--grey;
+				content: '';
+				transform: translateY(-50%);
+			}
+		}
+
+		&.active{
+			span:after{
+				display: none;
+			}
+		}
+
+		.a-afnIcon,
+		.a-profile-avatar {
+			display: none;
+
+			&.active {
+				display: block;
+			}
+		}
+
+		a {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+		}
+	}
+
+	.m-hamburgerMenuItem__signUp span {
+		padding: 0 $spacing--small;
+	}
+
+	.m-hamburgerMenuItem__accordion {
+		display: none;
+
+		&.active {
+			display: flex;
+		}
+	}
+}

@@ -1,0 +1,40 @@
+/**************************************************************************************************
+*   Recipe Detail: Overview - Logo (Mobile Only)
+**************************************************************************************************/
+.m-recipe-image__logo.-mobile {
+	display: none;
+
+	img {
+		padding-top: 12px;
+		height: 55px;
+	}
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		display: block;
+	}
+}
+.m-recipe-image__logo.desktop {
+	display: inline-block;
+	vertical-align: middle;
+	margin-right: 10px;
+
+	//&:before {
+	//	position: absolute;
+	//	top: 0;
+	//	left: 0;
+	//	z-index: -1;
+	//	width: 100%;
+	//	height: 100%;
+	//	background: $color--white;
+	//	border-radius: 50%;
+	//	content: '';
+	//}
+
+	img {
+		height: 86px;
+	}
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		display: none;
+	}
+}

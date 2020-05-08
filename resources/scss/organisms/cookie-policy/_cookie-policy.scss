@@ -1,0 +1,50 @@
+#o-cookiePolicyOverlay{
+	width: 100%;
+	position: fixed;
+	z-index: 10000;
+	bottom: 0;
+	background-color: $color--inkBlack;
+	overflow-x: hidden;
+	overflow-y: hidden;
+	flex-flow: row wrap;
+	display: flex;
+	visibility: hidden;
+}
+
+#o-cookiePolicyAccept{
+	background-color: $color--inkBlack;
+	align-items: center;
+	display: flex;
+	border-radius: 5px;
+	padding: 10px;
+	margin: 25px 25px 25px 25px;
+}
+
+#o-cookiePolicyOverlayText{
+	margin: 25px 25px 0px 25px;
+	color: white;
+	float: left;
+	width: 82%;
+
+	.bold {
+		font-weight: bold;
+	}
+	.underline{
+		text-decoration: underline;
+	}
+
+	.white{
+		color : white;
+	}
+}
+
+@media (max-width: 1080px){
+	#0-cookiePolicyOverlayText{
+		width: 100%;
+	}
+}
+
+
+
+
+

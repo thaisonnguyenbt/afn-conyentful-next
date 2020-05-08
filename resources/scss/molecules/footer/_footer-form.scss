@@ -1,0 +1,143 @@
+/**************************************************************************************************
+*   Footer: Form
+**************************************************************************************************/
+
+.m-footer__form {
+	text-align: left;
+
+	.m-footer__formLabel {
+		@include font-size(14);
+		color: $color--white;
+	}
+
+	.m-footer__formCopy {
+		@include font-size(12);
+		color: $color--white;
+	}
+
+	.m-footer__formInput {
+		position: relative;
+		margin: $spacing--small 0;
+		overflow: hidden;
+
+		#mc_embed_signup form {
+			min-width: 330px;
+		}
+
+		#mc_embed_signup input {
+			width: 100%;
+			height: 35px;
+			border: none;
+			border-radius: 25px;
+			&:focus {
+				outline-width: 0;
+			}
+		}
+
+		#mc_embed_signup input::placeholder {
+			@include font-size(10);
+			line-height: 10px;
+		}
+
+		#mc_embed_signup input[type='email'] {
+			@include font-size(12);
+			padding: 0 15px;
+			line-height: 12px;
+		}
+
+		button {
+			position: absolute;
+			top: 3px;
+			right: 5px;
+			padding: 0;
+			background: none;
+			border: none;
+			outline: 0;
+		}
+
+		button .icon-afn-cta {
+			position: relative;
+			display: block;
+			width: 30px;
+			height: 30px;
+		}
+
+		button .icon-afn-cta:before {
+			@include font-size(34);
+			position: absolute;
+			top: 50%;
+			left: 0;
+			color: $color--flamingo;
+			transform: translateY(-50%);
+		}
+	}
+
+	//Mailchimp
+	#mc_embed_signup {
+		@include font-size(12);
+		clear: left;
+		background: transparent;
+	}
+
+	.mc-field-group {
+		position: relative;
+		padding-bottom: 45px;
+	}
+
+	#mc_embed_signup div.mce_inline_error,
+	#mc_embed_signup .response {
+		@include font-size(12);
+		position: absolute;
+		bottom: 0;
+		width: 100%;
+		padding: 5px 10px;
+		margin: 0;
+		background: none;
+	}
+
+	#mc_embed_signup div.mce_inline_error {
+		top: 45px;
+		bottom: auto;
+		min-height: 36px;
+		padding: 0;
+		color: $color--white;
+	}
+
+	#mc_embed_signup .response {
+		top: 45px;
+		bottom: auto;
+		min-height: 40px;
+		padding: 0;
+		color: $color--white;
+	}
+
+	#mc_embed_signup #mce-error-response.response {
+		@include font-size(12);
+		color: $color--white;
+
+		a {
+			@include font-size(12);
+			color: $color--white;
+			text-decoration: underline;
+		}
+	}
+
+	//Chrome
+	input::-webkit-input-placeholder {
+		line-height:normal !important;
+	}
+
+	//Safari
+	@supports(font-synthesis: inherit) {
+		input::placeholder {
+			line-height: normal !important;
+			transform: translate3d(0, 2px, 0);
+   		}
+	}
+
+	//Firefox
+	input::-moz-placeholder {
+		line-height: 35px !important;
+	}
+}
+

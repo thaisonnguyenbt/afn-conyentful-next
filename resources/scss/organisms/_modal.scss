@@ -1,0 +1,271 @@
+/**************************************************************************************************
+*   Modal
+**************************************************************************************************/
+.o-modal {
+	.modal {
+		background: $color--white;
+	}
+
+	.modal,
+	.modal-dialog,
+	.modal-body {
+		padding: 0;
+		margin: 0;
+	}
+
+	.modal-dialog {
+		max-width: 100%;
+	}
+
+	.modal-header {
+		border: none;
+	}
+
+	.modal-content {
+		border: none;
+		border-radius: 0;
+	}
+
+	.m-ingredientsList {
+		padding-bottom: $spacing--medium-large;
+	}
+
+	.m-socialMediaList {
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			height: 100vh;
+			padding-bottom: $spacing--medium-large;
+		}
+	}
+
+	.m-docked-bar.not-desktop {
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	.m-docked-bar.not-desktop .m-toggle-list {
+		margin-right: 0;
+	}
+
+	.m-recipeDetailList {
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			max-height: 78vh;
+			overflow-y: scroll;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			max-height: 72vh;
+			overflow-y: scroll;
+		}
+
+		@include bp('max-width', $breakpoint--mobileSmall) {
+			max-height: 65vh;
+		}
+
+		ul {
+			padding-left: 0;
+		}
+
+		.m-recipeDetailList__item {
+			padding: $spacing--small $spacing;
+		}
+
+		.cmp-title {
+			padding: 0 $spacing;
+		}
+
+		&.-wide {
+			.m-recipeDetailList__item {
+				padding: $spacing;
+			}
+		}
+	}
+
+	.no-tabs .m-recipeDetailList {
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			max-height: 85vh;
+			overflow-y: scroll;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			max-height: 80vh;
+			overflow-y: scroll;
+		}
+
+		@include bp('max-width', $breakpoint--mobileSmall) {
+			max-height: 75vh;
+		}
+	}
+
+	.m-recipe-nutrition {
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			max-height: 78vh;
+			overflow-y: scroll;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			max-height: 72vh;
+			overflow-y: scroll;
+		}
+
+		@include bp('max-width', $breakpoint--mobileSmall) {
+			max-height: 65vh;
+		}
+	}
+
+	.m-modal__close {
+		.close {
+			opacity: 1;
+		}
+
+		button {
+			outline: 0;
+			display: inline-block;
+			position: relative;
+			z-index: 1;
+			padding: 1em;
+			margin: -1em;
+
+			&:focus {
+				outline: 0;
+			}
+		}
+
+		svg {
+			width: 28px;
+			height: 28px;
+		}
+
+		&.right-aligned {
+			margin-left: auto;
+
+			svg {
+				fill: $color--black;
+			}
+		}
+	}
+
+	.m-modal__table {
+		p, p strong {
+			@include font-size(14);
+		}
+
+		p:not(:last-child) {
+			margin-bottom: 0;
+		}
+	}
+}
+
+.o-modal.-medium {
+	.modal {
+		top: 50%;
+		left: 50%;
+		height: auto;
+		max-width: 600px;
+		padding: 0 !important;
+		transform: translate(-50%, -50%);
+	}
+
+	.modal-dialog {
+		position: relative;
+	}
+
+	.modal-header {
+		border: none;
+
+		button {
+			border: none;
+			outline: 0;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+
+		&:hover {
+			span {
+				color: $color--mandy;
+			}
+		}
+	}
+
+	.modal-body {
+		padding: $spacing;
+		text-align: center;
+
+		.m-modal__table {
+			text-align: left;
+		}
+	}
+
+	.m-modal__title, .m-modal__content {
+		margin-bottom: $spacing;
+	}
+
+	.m-modal__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+
+	.m-modal__footnote {
+		button {
+			@include font-size(18);
+		}
+	}
+}
+
+.o-modal.-small {
+	.modal {
+		top: 50%;
+		left: 50%;
+		height: auto;
+		max-width: 600px;
+		padding: 0 !important;
+		transform: translate(-50%, -50%);
+	}
+
+	.modal-dialog {
+		position: relative;
+	}
+
+	.modal-header {
+		border: none;
+
+		button {
+			border: none;
+			outline: 0;
+		}
+
+		&:focus {
+			outline: 0;
+		}
+
+		&:hover {
+			span {
+				color: $color--mandy;
+			}
+		}
+	}
+
+	.modal-body {
+		padding: $spacing--small $spacing--medium $spacing--medium;
+		margin: 0 auto;
+		text-align: center;
+	}
+
+	.m-modal__title, .m-modal__content {
+		margin-bottom: $spacing;
+	}
+
+	.m-modal__close {
+		position: absolute;
+		top: 15px;
+		right: 15px;
+	}
+
+	.m-modal__footnote {
+		button {
+			@include font-size(18);
+		}
+	}
+}

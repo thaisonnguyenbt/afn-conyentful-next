@@ -1,0 +1,130 @@
+/**************************************************************************************************
+*  Commercial Tile
+**************************************************************************************************/
+.m-commercial-tile__heading-title{
+	margin-top: $spacing--medium;
+	margin-bottom: $spacing;
+	font-size: 18px;
+}
+
+.m-commercial-tiles {
+	margin-bottom: $spacing;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding: 0 15px;
+	}
+}
+
+.m-commercial-tiles {
+	margin-bottom: $spacing;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding: 0 15px;
+	}
+}
+
+.m-commercial-tile {
+	margin-bottom: $spacing;
+	color: $color--black;
+
+	&:hover, &:focus, &:active {
+		text-decoration: none;
+		border: none;
+		outline: 0;
+	}
+
+	div[class^="col"]:first-child {
+		padding-right: 5px;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			padding-right: 15px;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding-right: 10px;
+		}
+	}
+
+	div[class^="col"]:last-child {
+		padding-left: 5px;
+		padding-right: 20px;
+
+		@include bp('max-width', $breakpoint--tabletLandscape) {
+			padding-left: 15px;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding-left: 10px;
+		}
+	}
+
+	.m-commercial-tile__title {
+		* {
+			@include font-size(14);
+			display: -webkit-box;
+			overflow: hidden;
+			-webkit-line-clamp: 3;
+			-webkit-box-orient: vertical;
+
+			@include bp('min-width', $breakpoint--laptop) {
+				@include font-size(16);
+			}
+		}
+
+		.cmp-title{
+			margin: 0 0 15px 0;
+
+			.cmp-title__text{
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	.m-commercial-tile__copy {
+		@include font-size(12);
+		line-height: 1;
+
+		@include bp('min-width', $breakpoint--laptop) {
+			@include font-size(14);
+		}
+
+		* {
+			@include font-size(12);
+			line-height: 1.1rem;
+
+			@include bp('min-width', $breakpoint--laptop) {
+				@include font-size(14);
+			}
+		}
+	}
+
+	.m-commercial-tile__footnote {
+		@include font-size(14);
+		line-height: 1;
+
+		@include bp('min-width', $breakpoint--laptop) {
+			@include font-size(16);
+		}
+
+		* {
+			@include font-size(14);
+			line-height: 1.1rem;
+
+			@include bp('min-width', $breakpoint--laptop) {
+				@include font-size(16);
+			}
+		}
+	}
+
+	.m-commercial-tile__copy {
+		display: -webkit-box;
+		margin-bottom: $spacing--small;
+		overflow: hidden;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			display: none;
+		}
+	}
+}

@@ -1,0 +1,43 @@
+/**************************************************************************************************
+*   Recipe Detail
+**************************************************************************************************/
+.p-recipe {
+	.o-recommendations,
+	.category-tags-round,
+	.afn-video-container,
+	.breadcrumb,
+	.cmp-breadcrumb,
+	.recommendations,
+	.m-ratings,
+	.o-ratings {
+		@media print {
+			display: none;
+		}
+	}
+
+	.o-recommendations {
+		margin-bottom: 0;
+	}
+
+	.cmp-breadcrumb .cwp-breadcrumb__dropdown,
+	.cmp-breadcrumb .cwp-breadcrumb__dropdown.-active{
+		margin: 0 -15px;
+	}
+}
+
+.container .m-category-tags,
+.container .o-recommendations {
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		padding: 0 15px;
+	}
+}
+
+#recipe-ingredients-list .modal-header {
+	padding-bottom: 0;
+}
+
+#recipe-ingredients-list .modal-body {
+	height: 80%;
+}
+
+

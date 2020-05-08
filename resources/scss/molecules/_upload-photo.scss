@@ -1,0 +1,179 @@
+/**************************************************************************************************
+*  Upload Photo
+**************************************************************************************************/
+.upload-photo-container {
+	display: none; /* Hidden by default */
+	position: fixed; /* Stay in place */
+	z-index: 999; /* Sit on top */
+	padding-top: 70px; /* Location of the box */
+	left: 0;
+	top: 0;
+	width: 100%; /* Full width */
+	height: 100%; /* Full height */
+	overflow: auto; /* Enable scroll if needed */
+	background-color: rgba(0, 0, 0, 0.96);
+
+	.upload-photo-content {
+		margin: auto;
+		padding: 20px;
+		width: 80%;
+		position: relative;
+
+		@include bp('max-width', $breakpoint--mobileLarge){
+			width: 100%;
+			text-align: center;
+		}
+
+		p{
+			text-align: center;
+			color: $color--white;
+
+			img{
+				width: 30px;
+				padding-right: 5px;
+			}
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				font-size: 18px;
+				font-weight: bolder;
+			}
+		}
+
+		.edit-rotate{
+			position: absolute;
+			right: 10.5%;
+			bottom: 14%;
+
+			img{
+				height: 30px;
+				width: auto;
+				margin: 5px;
+			}
+
+			a{
+				color: #ff4c24;
+			}
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				position: static;
+				margin-top: 20px;
+			}
+		}
+
+		.upload-photo-button{
+			text-align: center;
+			margin-top: 40px;
+
+			.edit-update{
+				border-radius: 50px;
+				color: $color--white;
+				background-color: $color--maroonFlush;
+				border: 1px solid $color--maroonFlush;
+				height: auto;
+				width: auto;
+				padding: 5px 20px;
+				font-size: 16px;
+				font-weight: bolder;
+				margin-left: 10px;
+
+				&:hover {
+					background: $color--mandy;
+				}
+			}
+
+			.edit-cancel{
+				border-radius: 50px;
+				background-color: transparent;
+				color: $color--maroonFlush;
+				border: 1px solid $color--maroonFlush;
+				height: auto;
+				width: auto;
+				padding: 5px 45px;
+				font-size: 16px;
+				font-weight: bolder;
+				margin-right: 10px;
+			}
+		}
+
+		.croppie-container .cr-boundary{
+			background-color: rgba(50, 50, 50, 0.23);
+		}
+
+		.croppie-container .cr-slider-wrap{
+			text-align: left;
+			margin: 32px auto;
+
+			.cr-slider{
+				position: relative;
+
+				&:before{
+					content: '\f03e';
+					font-family: "Font Awesome 5 Free";
+					color: $color--white;
+					width: auto;
+					position: absolute;
+					left: -25px;
+					top: -3px;
+				}
+
+				&:after{
+					content: '\f03e';
+					font-family: "Font Awesome 5 Free";
+					font-size: 40px;
+					color: $color--white;
+					width: auto;
+					position: absolute;
+					right: -55px;
+					top: -5px;
+				}
+			}
+
+			/* Special styling for WebKit/Blink */
+			input[type=range]::-webkit-slider-thumb {
+				background: #ff4c24;
+				cursor: pointer;
+			}
+
+			/* All the same stuff for Firefox */
+			input[type=range]::-moz-range-thumb {
+				background: #ff4c24;
+				cursor: pointer;
+			}
+
+			/* All the same stuff for IE */
+			input[type=range]::-ms-thumb {
+				background: #ff4c24;
+				cursor: pointer;
+			}
+
+			input[type=range]::-webkit-slider-runnable-track {
+				cursor: pointer;
+				background: #494949;
+			}
+
+			input[type=range]::-moz-range-track {
+				cursor: pointer;
+				background: #494949;
+			}
+
+			input[type=range]::-ms-track {
+				cursor: pointer;
+				background: transparent;
+				border-color: transparent;
+				color: transparent;
+			}
+
+			input[type=range]::-ms-fill-lower {
+				background: #494949;
+			}
+
+			input[type=range]::-ms-fill-upper {
+				background: #494949;
+			}
+
+			@include bp('max-width', $breakpoint--mobileLarge){
+				display: none;
+			}
+		}
+	}
+}

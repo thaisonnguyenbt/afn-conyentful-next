@@ -1,0 +1,40 @@
+/**************************************************************************************************
+*  Recommendation Signpost
+**************************************************************************************************/
+.m-recommendation-signpost {
+	position: relative;
+	display: flex;
+	background: $color--white;
+	flex-direction: column;
+
+	.a-recommendation-signpost__link {
+		&:hover, &:focus, &:active, &:visited {
+			color: $color--maroonFlush;
+			text-decoration: underline;
+		}
+
+		h4 {
+			@include font-size(20);
+		}
+	}
+
+	.a-recommendation-signpost__title {
+		padding: $spacing $spacing 0;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding: $spacing--small $spacing 0;
+		}
+
+		.cmp-title__text {
+			margin-bottom: 0;
+		}
+	}
+
+	.m-recommendation-signpost__ratings {
+		padding: $spacing;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding: $spacing--small $spacing;
+		}
+	}
+}

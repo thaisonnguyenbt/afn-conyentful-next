@@ -1,0 +1,97 @@
+/**************************************************************************************************
+*   Footer
+**************************************************************************************************/
+.o-footer {
+	position: relative;
+	z-index: 998;
+	padding: 42px $spacing;
+	margin: $spacing--medium-large 0 0;
+	text-align: center;
+	//background: $color--dark;
+	background: rgb(180,36,74);
+	background: -moz-linear-gradient(90deg, rgba(180,36,74,1) 26%, rgba(231,66,82,1) 67%, rgba(241,90,56,1) 100%);
+	background: -webkit-linear-gradient(90deg, rgba(180,36,74,1) 26%, rgba(231,66,82,1) 67%, rgba(241,90,56,1) 100%);
+	background: linear-gradient(90deg, rgba(180,36,74,1) 26%, rgba(231,66,82,1) 67%, rgba(241,90,56,1) 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#b4244a",endColorstr="#f15a38",GradientType=1);
+
+	@include bp('max-width', $breakpoint--mobileLarge) {
+		padding: $spacing--medium 15px;
+	}
+
+	@media print {
+		display: none;
+	}
+
+	.o-footer__content {
+		display: flex;
+		max-width: 1280px;
+		padding: 0;
+		margin: 0 auto;
+		flex-direction: row;
+
+		.m-footer__form {
+			margin-left: auto;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			border-bottom: 1px solid $color--white;
+			flex-direction: column;
+			justify-content: flex-start;
+
+			.a-footer__logo {
+				margin-bottom: $spacing;
+				text-align: left;
+			}
+
+			.m-footer__form:last-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.o-footer__menu {
+		display: flex;
+		max-width: 1280px;
+		padding: 0 0 $spacing;
+		margin: 0 auto $spacing;
+		border-bottom: 1px solid $color--white;
+		flex-direction: row;
+
+		.m-footer__menuList:last-child {
+			margin-left: auto;
+		}
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			padding: $spacing 0 0;
+			border: none;
+			flex-direction: column;
+			justify-content: flex-start;
+
+			.m-footer__menuList:not(.-socialMedia) ul {
+				padding: 0 0 $spacing--small;
+				margin-bottom: $spacing;
+				border-bottom: 1px solid $color--white;
+				flex-direction: column;
+			}
+
+			.m-footer__menuList:not(.-socialMedia) ul li {
+				padding: 0;
+				margin-bottom: $spacing;
+				text-align: left;
+			}
+
+			.m-footer__menuList.-socialMedia ul {
+				justify-content: flex-start;
+			}
+
+			.m-footer__menuList:last-child {
+				margin-left: 0;
+			}
+		}
+	}
+
+	.a-footer__footnote {
+		max-width: 1280px;
+		margin: 0 auto;
+	}
+}

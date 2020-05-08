@@ -1,0 +1,63 @@
+/**************************************************************************************************
+*  Vue Dropdown
+**************************************************************************************************/
+.m-sorting-dropdown,
+.m-filter-dropdown {
+	display: flex;
+	justify-content: flex-end;
+
+	@include bp('max-width', $breakpoint--mobileLarge) {
+		justify-content: flex-start;
+	}
+
+	.m-sorting-dropdown-container,
+	.m-filter-dropdown-container {
+		display: flex;
+		flex-direction: row;
+		align-content: center;
+	}
+
+	.m-sorting-dropdown__label,
+	.m-filter-dropdown__label {
+		display: flex;
+		margin-right: $spacing--small;
+		align-self: center;
+
+		span {
+			font-family: 'Hurme Geometric Sans Bold', serif;
+		}
+	}
+
+	.m-sorting-dropdown__list,
+	.m-filter-dropdown__list {
+		width: 200px;
+		border-bottom: 1px solid $color--dark;
+
+		input {
+			padding: 0;
+		}
+
+		.vs__selected {
+			padding: 0;
+		}
+
+		.vs__dropdown-toggle {
+			border: none;
+			border-radius: 0;
+		}
+
+		.vs__dropdown-menu {
+			.vs__dropdown-option--highlight {
+				background: $color--maroonFlush;
+			}
+		}
+
+		.vs__open-indicator {
+			fill: $color--black;
+		}
+	}
+
+	.m-filter-dropdown__list {
+		width: 300px;
+	}
+}

@@ -1,0 +1,80 @@
+/**************************************************************************************************
+*   Bookmarks Page
+**************************************************************************************************/
+.p-bookmarks {
+	min-height: 500px;
+
+	.o-prompt-login,
+	.m-filters-bar,
+	.o-bookmarks-listing,
+	.m-sorting-dropdown,
+	.m-search-bar {
+		display: none;
+
+		&.active {
+			display: block;
+			margin-bottom: $spacing--medium;
+		}
+	}
+
+	.m-sorting-dropdown.active,
+	.m-search-bar.active {
+		display: flex;
+	}
+
+	.m-search-bar.active {
+		margin-bottom: 0;
+
+		@include bp('max-width', $breakpoint--mobileLarge) {
+			margin-bottom: $spacing;
+		}
+	}
+
+	.m-listing-search {
+		margin-top: 0;
+	}
+
+	.no-data {
+		max-width: 500px;
+		margin: 0 auto $spacing--medium;
+		text-align: center;
+	}
+
+	.m-data-listing__item {
+		margin-bottom: $spacing;
+	}
+
+	//Safari
+	@supports(font-synthesis: inherit) {
+		input::placeholder {
+			line-height: normal !important;
+			transform: translate3d(0, 2px, 0);
+   		}
+	}
+}
+
+.no-gap-both .o-prompt-login,
+.no-gap-both .o-bookmarks-listing {
+	&.active {
+		padding-top: 0;
+		padding-bottom: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+	}
+}
+
+.no-gap-top .o-prompt-login,
+.no-gap-top .o-bookmarks-listing {
+	&.active {
+		padding-top: 0;
+		margin-top: 0;
+	}
+}
+
+.no-gap-bottom .o-prompt-login,
+.no-gap-bottom .o-bookmarks-listing {
+	&.active {
+		padding-bottom: 0;
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,40 @@
+/**************************************************************************************************
+*   Docked Recipe Bar
+**************************************************************************************************/
+.m-docked-bar.not-desktop {
+	position: fixed;
+	bottom: 30px;
+	z-index: 999;
+	width: 100%;
+	padding: 0 15px;
+	flex-direction: row;
+	align-items: center;
+
+	@include bp('max-width', $breakpoint--tabletLandscape) {
+		left: 50%;
+		display: flex;
+		transform: translateX(-50%);
+	}
+
+	.m-toggle-list {
+		margin-right: $spacing--small;
+		flex-grow: 2;
+
+		button {
+			height: 50px;
+		}
+	}
+
+	.m-social-sharing {
+		margin-left: auto;
+
+		.a-button.-icon{
+			background-color: $color--maroonFlush;
+			color: $color--white;
+
+			svg{
+				fill: $color--white
+			}
+		}
+	}
+}
