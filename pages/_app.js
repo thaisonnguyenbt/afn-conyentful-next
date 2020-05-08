@@ -3,6 +3,7 @@ import App from 'next/app';
 import { ApolloProvider } from '@apollo/react-hooks';
 
 import withData from '../config/apollo-client';
+import withReactRouter from '../config/with-react-router';
 
 import '../resources/scss/main.scss';
 import '../resources/scss/vendor.scss';
@@ -20,4 +21,4 @@ class MyApp extends App {
 }
 
 // Wraps all components in the tree with the data provider
-export default withData(MyApp);
+export default withData(withReactRouter(MyApp));
