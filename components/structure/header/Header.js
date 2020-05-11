@@ -94,11 +94,10 @@ const Header = () => {
             <div className={"aem-Grid aem-Grid--12 aem-Grid--default--12"}>
                 {process.browser && <Query query={NavigationQuery} variables={{ preview: false, locale: locale}}>
                     {({ loading, error, data }) => {
-                        if (loading) return <>XXXXXXXX</>;
-                        if (error) return <>YYYYYYYYYYY</>;
+                        if (loading) return <></>;
+                        if (error) return <></>;
                         const rootNode = data.pageCollection.items[0];
                         const pages = rootNode.childrenCollection.items;
-                        console.log(data.pageCollection.items[0])
                         return <>
                             <header className="o-header">
                                 <nav className="o-navbar -desktop">

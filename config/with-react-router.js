@@ -5,7 +5,6 @@ const isServer = typeof window === 'undefined';
 export default App => {
   return class AppWithReactRouter extends React.Component {
     static async getInitialProps(appContext) {
-      console.log(appContext)
       if (!appContext.ctx.req) {
         appContext.ctx.req = { originalUrl : '/' }
       }
