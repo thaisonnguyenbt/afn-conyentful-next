@@ -92,7 +92,7 @@ const Header = () => {
     return <div className={"experiencefragment aem-GridColumn aem-GridColumn--default--12"}>
         <div className={"xf-content-height"}>
             <div className={"aem-Grid aem-Grid--12 aem-Grid--default--12"}>
-                {process.browser && <Query query={NavigationQuery} variables={{ preview: false, locale: locale}}>
+                {<Query query={NavigationQuery} variables={{ preview: false, locale: locale}}>
                     {({ loading, error, data }) => {
                         if (loading) return <></>;
                         if (error) return <></>;

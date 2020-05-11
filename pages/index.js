@@ -9,11 +9,13 @@ import { Redirect } from 'react-router'
 import Home from './Home'
 import About from './About'
 import Users from './Users'
+import People from './People'
 import NotFound from './NotFound'
+import Layout from '../components/structure/Layout';
 
 const Index = () => {
   
-  return (
+  return <Layout>
     <div>
       <div>
         <h1>Welcome to Next.js!</h1>
@@ -38,13 +40,13 @@ const Index = () => {
           <Route path="/" exact component={Home} />
           <Route path="/about/" component={About} />
           <Route path="/users/" component={Users} />
-          <Redirect from="/people/" to="/users/" />
+          <Route path="/people/" component={People} />
           <Route component={NotFound}/>
         </Switch>
       </div>
       <PageList />
     </div>
-  );
+  </Layout>
 };
 
 export default Index;

@@ -10,9 +10,10 @@ import Home from './Home'
 import About from './About'
 import Users from './Users'
 import NotFound from './NotFound'
+import Layout from '../components/structure/Layout';
 
 const AnyPage = () => {
-    return (
+    return <Layout>
         <div>
             <div>
                 <h1>Welcome to Next.js!</h1>
@@ -42,8 +43,8 @@ const AnyPage = () => {
                 </Switch>
             </div>
             <PageList />
-            </div>
-    )
+        </div>
+    </Layout>
 }
 
 export default AnyPage

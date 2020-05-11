@@ -1,18 +1,18 @@
 import React from 'react'
 import Link from 'next/link'
-
+import Layout from '../components/structure/Layout'
+import PageList from '../components/PagesList';
 
 function page2() {
-    return (
+    return <Layout>
         <div>
-            Hello from Page 2
-            <br/>
+            <h1>Hello from Page 2</h1>
             <Link href="/">
                 <a>Home</a>
             </Link>
-        </div>
-        
-    )
+            <PageList />
+        </div>  
+    </Layout>;
 }
 
 export default page2

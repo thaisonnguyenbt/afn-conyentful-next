@@ -9,7 +9,9 @@
     "export": "next build && next export"
   },
   "dependencies": {
+    "@apollo/client": "^3.0.0-beta.44",
     "@apollo/react-hooks": "^3.1.5",
+    "@svgr/webpack": "^5.4.0",
     "@zeit/next-sass": "^1.0.1",
     "apollo-boost": "^0.4.7",
     "apollo-cache-inmemory": "^1.6.5",
@@ -19,11 +21,15 @@
     "graphql": "^15.0.0",
     "graphql-tag": "^2.10.3",
     "isomorphic-unfetch": "^3.0.0",
+    "jquery": "^3.5.1",
     "next": "9.3.5",
     "next-with-apollo": "^4.3.0",
     "node-sass": "^4.14.1",
     "react": "16.13.1",
+    "react-apollo": "^3.1.5",
+    "react-bootstrap": "^1.0.1",
     "react-dom": "16.13.1",
+    "react-owl-carousel2": "^0.3.0",
     "react-router": "^5.1.2",
     "react-router-dom": "^5.1.2",
     "serverless-nextjs-plugin": "^2.4.10"

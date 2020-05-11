@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'next/link'
-import logo from '../../../images/logo/afn-logo-white.svg'
+import logo from '../../../resources/images/logo/afn-logo-white.svg'
 
 /**
  * Header component for Mobile
