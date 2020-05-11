@@ -3,7 +3,7 @@ import React from 'react'
 const Users = () => {
     return (
         <div>
-            Hello from Users
+            <h1>Hello From USER Page</h1>
         </div>
     )
 }

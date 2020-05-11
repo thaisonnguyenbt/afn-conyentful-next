@@ -28,7 +28,6 @@ const PageList = () => {
   }
   return (
     <div>
-        <h1>Hello From Page List Component</h1>
       <ul>
         {data.pageCollection.items.map(page => {
           return <li key={`page__${page.title}`}>{page.title}</li>;
