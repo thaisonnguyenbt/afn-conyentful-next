@@ -101,10 +101,10 @@ const Header = () => {
                         return <>
                             <header className="o-header">
                                 <nav className="o-navbar -desktop">
-                                    {/* <HeaderDesktop siteMetadata={siteMetadata} allLanguages={allLanguages} language={language} pathname={pathname} clickCallback={this.checkLocale} /> */}
-                                    {/* <HeaderDesktopNavBar pages={pages} language={language} /> */}
+                                    <HeaderDesktop siteMetadata={siteMetadata} allLanguages={allLanguages} language={language} pathname={pathname} clickCallback={checkLocale} />
+                                    <HeaderDesktopNavBar pages={pages} language={language} />
                                 </nav>
-                                {/* <HeaderMobile siteMetadata={siteMetadata} /> */}
+                                <HeaderMobile siteMetadata={siteMetadata} />
                             </header>
                             <div className="padded-header"></div>
                             <div className="o-search-container">
@@ -131,7 +131,7 @@ const Header = () => {
                                     </button>
                                 </div>
                             </div>
-                            {/* <HeaderMobileNavBar siteMetadata={siteMetadata} pages={pages} language={language} /> */}
+                            <HeaderMobileNavBar siteMetadata={siteMetadata} pages={pages} language={language} />
                         </>
 
                     }}

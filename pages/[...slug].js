@@ -1,5 +1,4 @@
 import React from 'react';
-import Head from 'next/head';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
 import PageList from '../components/PagesList';
@@ -14,7 +13,9 @@ import Layout from '../components/structure/Layout';
 import AfnPage from '../components/structure/AfnPage';
 
 const AnyPage = () => {
-    return <Layout>
+    return <>
+      
+      <Layout>
         <div>
             <div>
                 <Switch>
@@ -26,7 +27,8 @@ const AnyPage = () => {
             </div>
             <PageList />
         </div>
-    </Layout>
+      </Layout>
+    </>
 }
 
 export default AnyPage

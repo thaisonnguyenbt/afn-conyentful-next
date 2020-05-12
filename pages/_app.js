@@ -7,6 +7,7 @@ import withReactRouter from '../config/with-react-router';
 
 import '../resources/scss/main.scss';
 import '../resources/scss/vendor.scss';
+import '../resources/scss/custom.scss';
 class MyApp extends App {
   render() {
     const { Component, pageProps, apollo } = this.props;
