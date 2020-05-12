@@ -1,21 +1,4 @@
-service: afn-contentful-next
-
-provider:
-  name: aws
-  runtime: nodejs12.x
-  stage: ${opt:stage, 'staging'}
-  region: ap-southeast-1
-
-plugins:
-  - serverless-nextjs-plugin
-
-custom:
-  name: afn-contentful-next
-  serverless-nextjs:
-    nextConfigDir: ./
-    cloudFront: true
-    assetsBucketName: 'afn-contentful-next-${self:provider.stage}'
-
-package:
-  exclude:
-    - ./**
+afn-contentful-next:
+  component: serverless-next.js
+  inputs:
+    bucketName: my-bucket

@@ -20,3 +20,5 @@ module.exports = {
         return config
     }
 }
+
+module.exports = {...require('next-images')()}

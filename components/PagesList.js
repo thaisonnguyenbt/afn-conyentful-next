@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import { useQuery } from '@apollo/react-hooks';
 import gql from 'graphql-tag';
+import { LinkFromFields, LinkFromRecursive, FullPageFields, ContentFeedFields, PageContentFragment, AssetFields, TagFields, CarouselFields, SingleFilterListingFields, MultipleFilterListingFields, FilterFields, RecipeFields, ArticleFields, BrightcoveVideoFields } from '../utils/fragments'
+
 
 const PageQuery = gql`
   query pageCollection {
@@ -9,9 +11,15 @@ const PageQuery = gql`
       items {
         slug
         title
+        tagsCollection {
+          items {
+            ...TagFields
+          }
+        }
       }
     }
   }
+  ${TagFields}
 `;
 
 
@@ -30,7 +38,7 @@ const PageList = () => {
     <div>
       <ul>
         {data.pageCollection.items.map(page => {
-          return <li key={`page__${page.title}`}>{page.title}</li>;
+          return <li key={`page__${page.title}`}>{page.tagsCollection.items.length}</li>;
         })}
       </ul>
     </div>

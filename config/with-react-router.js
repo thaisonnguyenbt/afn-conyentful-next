@@ -1,6 +1,8 @@
 import React from 'react';
 import {BrowserRouter} from 'react-router-dom';
 const isServer = typeof window === 'undefined';
+import { ApolloProvider } from "react-apollo";  
+import { client } from '../config/apollo-client'
 
 export default App => {
   return class AppWithReactRouter extends React.Component {
@@ -34,10 +36,13 @@ export default App => {
           </StaticRouter>
         );
       }
+      
       return (
-        <BrowserRouter>
-          <App {...this.props} />
-        </BrowserRouter>
+        <ApolloProvider client={client}>
+          <BrowserRouter>
+            <App {...this.props} />
+          </BrowserRouter>
+        </ApolloProvider>
       );
     }
   };

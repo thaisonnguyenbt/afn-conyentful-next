@@ -12,6 +12,7 @@ import Users from './Users'
 import People from './People'
 import NotFound from './NotFound'
 import Layout from '../components/structure/Layout';
+import AfnLink from '../components/AfnLink';
 
 const Index = () => {
   
@@ -32,6 +33,9 @@ const Index = () => {
             </li>
             <li>
               <Link to="/people/">People</Link>
+            </li>
+            <li>
+              <Link to="/page2">xxxxxxxx</Link>
             </li>
           </ul>
         </nav>
