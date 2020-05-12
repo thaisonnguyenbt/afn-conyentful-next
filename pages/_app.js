@@ -7,7 +7,9 @@ import withReactRouter from '../config/with-react-router';
 
 import '../resources/scss/main.scss';
 import '../resources/scss/vendor.scss';
-import '../resources/scss/custom.scss';
+import 'react-owl-carousel2/lib/styles.css'
+import 'react-owl-carousel2/src/owl.theme.default.css'
+
 class MyApp extends App {
   render() {
     const { Component, pageProps, apollo } = this.props;

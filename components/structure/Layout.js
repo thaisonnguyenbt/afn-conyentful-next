@@ -1,4 +1,5 @@
 import Header from './header/Header'
+import Footer from './Footer'
 import Head from 'next/head';
 
 const Layout = props => (
@@ -16,6 +17,7 @@ const Layout = props => (
                 </div>
             </div>
             <div className="viewport-bottom">
+                <Footer/>
             </div>
         </div>
     </>

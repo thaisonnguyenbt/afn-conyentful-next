@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import logo from "../../images/common/logo/afn-logo-white.svg"
+import logo from "../../resources/images/logo/afn-logo-white.svg"
 import PropTypes from 'prop-types'
 
 /**

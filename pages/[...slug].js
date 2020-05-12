@@ -18,14 +18,13 @@ const AnyPage = () => {
       <Layout>
         <div>
             <div>
-                <Switch>
+                { process.browser && <Switch>
                   <Route path="/">
                     <AfnPage />
                   </Route>
                   <Route component={NotFound} />
-                </Switch>
+                </Switch>}
             </div>
-            <PageList />
         </div>
       </Layout>
     </>

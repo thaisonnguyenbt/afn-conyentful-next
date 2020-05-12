@@ -132,6 +132,14 @@
  @import './pages/bookmarks';
  @import './pages/recipe';
 
+ /**
+ * Custom
+ */
+ @import './custom/Carousel.scss';
+ @import './custom/Languages.scss';
+ @import './custom/BrightcovePlayer.scss';
+ @import './custom/FullFilterListing.scss';
+
 body {
     background: $color--grey !important;
 }
