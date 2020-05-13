@@ -94,7 +94,7 @@ const Header = () => {
     return <div className={"experiencefragment aem-GridColumn aem-GridColumn--default--12"}>
         <div className={"xf-content-height"}>
             <div className={"aem-Grid aem-Grid--12 aem-Grid--default--12"}>
-                {<Query query={NavigationQuery} variables={{ preview: preview, locale: locale}}>
+                <Query query={NavigationQuery} variables={{ preview: preview, locale: locale}}>
                     {({ loading, error, data }) => {
                         if (loading) return <></>;
                         if (error) return <></>;
@@ -137,7 +137,7 @@ const Header = () => {
                         </>
 
                     }}
-                </Query> }
+                </Query>
             </div>
         </div>
     </div>

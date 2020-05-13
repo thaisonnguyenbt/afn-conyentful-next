@@ -5,7 +5,7 @@ import gql from "graphql-tag";
 import { LinkFromFields, LinkFromRecursive, FullPageFields, ContentFeedFields, PageContentFragment, AssetFields, TagFields, CarouselFields, SingleFilterListingFields, MultipleFilterListingFields, FilterFields, RecipeFields, ArticleFields, BrightcoveVideoFields } from '../../utils/fragments'
 import { allLocales, defaultLanguage, defaultLocale} from '../../utils/siteConfig'
 import { preview } from '../../config/apollo-client';
-import SEO from './Seo';
+import ReactSEO from './ReactSEO';
 import Breadcrumb from './Breadcrumb';
 import RichText from './RichText';
 import Loading from './Loading';
@@ -67,8 +67,9 @@ const AfnPage = () => {
           return <Error />;
         }
         let page = data.pageCollection.items[0];
+        
         return <>
-          <SEO title={page.pageTitle} description={page.description} />
+          <ReactSEO title={page.pageTitle} description={page.description} />
           <Breadcrumb page={page} language={language} />
           {(!page.rightPanel || !pathname) && <>
             <RichText pageContent={page.content} locale={locale} language={language} slug={page.slug} tags={page.tagsCollection.items} />

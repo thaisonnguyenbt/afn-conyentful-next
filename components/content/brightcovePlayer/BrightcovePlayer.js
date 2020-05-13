@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactPlayerLoader from '@brightcove/react-player-loader';
-// import './BrightcovePlayer.scss'
 import {defaultBrightcoveAccount} from '../../../utils/siteConfig'
 
 const BrightcovePlayer = ({accountId, videoId = "5819230967001"}) => {

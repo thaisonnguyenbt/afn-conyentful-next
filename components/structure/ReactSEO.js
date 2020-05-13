@@ -10,7 +10,7 @@ import PropTypes from "prop-types"
 import { Helmet } from "react-helmet"
 import siteMetadata from '../../config/SiteMetaData';
 
-function SEO({ description, lang, meta, title }) {
+function ReactSEO({ description, lang, meta, title }) {
   return (
     <Helmet
       htmlAttributes={{
@@ -56,17 +56,17 @@ function SEO({ description, lang, meta, title }) {
   )
 }
 
-SEO.defaultProps = {
+ReactSEO.defaultProps = {
   lang: `en`,
   meta: [],
   description: ``,
 }
 
-SEO.propTypes = {
+ReactSEO.propTypes = {
   description: PropTypes.string,
   lang: PropTypes.string,
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
 }
 
-export default SEO
+export default ReactSEO

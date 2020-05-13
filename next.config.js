@@ -21,4 +21,4 @@ module.exports = {
     }
 }
 
-module.exports = {...require('next-images')()}
+Object.assign(module.exports, require('next-images')());

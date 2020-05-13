@@ -1,4 +1,6 @@
 afn-contentful-next:
   component: serverless-next.js
   inputs:
-    bucketName: my-bucket
+    bucketName: afn-contentful-next
+    # runtimes:
+    #   - nodejs12.x

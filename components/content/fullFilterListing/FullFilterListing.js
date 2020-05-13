@@ -10,8 +10,6 @@ import FullFilterListingItemListView from './FullFilterListingItemListView'
 import FullFilterListingItemGridView from './FullFilterListingItemGridView'
 import { preview } from '../../../config/apollo-client';
 
-//import './FullFilterListing.scss'
-
 /**
  * Query for all pages - for the first filter option
  */
