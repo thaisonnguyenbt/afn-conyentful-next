@@ -1,6 +1,14 @@
 afn-contentful-next:
   component: serverless-next.js
   inputs:
+    runtime: nodejs12.x
+    name: 
+      defaultLambda: afn-contentful-next-default-lambda
+      apiLambda: afn-contentful-next-api-lambda
+    memory:
+      defaultLambda: 512
+      apiLambda: 512
+    timeout:
+      defaultLambda: 20
+      apiLambda: 20
     bucketName: afn-contentful-next
-    # runtimes:
-    #   - nodejs12.x
