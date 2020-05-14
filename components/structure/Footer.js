@@ -1,5 +1,5 @@
 import React from 'react'
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 import logo from "../../resources/images/logo/afn-logo-white.svg"
 import PropTypes from 'prop-types'
 
@@ -19,8 +19,10 @@ const Footer = ({ siteMetadata, currentLanguage }) => {
                 <footer className={"o-footer"}>
                     <div className={"o-footer__content"}>
                         <div className={"a-footer__logo"}>
-                            <Link to={currentLanguage === 'en' ? '/' : '/' + currentLanguage}>
-                                <img src={logo} title={ siteMetadata.title } alt={ siteMetadata.description } className={" ls-is-cached lazyloaded"} />
+                            <Link href="/[...slug]" as={currentLanguage === 'en' ? '/' : '/' + currentLanguage}>
+                                <a>
+                                    <img src={logo} title={ siteMetadata.title } alt={ siteMetadata.description } className={" ls-is-cached lazyloaded"} />
+                                </a>
                             </Link>
                         </div>
                     </div>
@@ -28,19 +30,19 @@ const Footer = ({ siteMetadata, currentLanguage }) => {
                         <div className={"m-footer__menuList"}>
                             <ul>
                                 <li>
-                                    <Link to={"/" + currentLanguage + "/about"}>About</Link>
+                                    <Link href="/[...slug]" as={"/" + currentLanguage + "/about"}><a>About</a></Link>
                                 </li>
                                 <li>
-                                    <Link to={"/" + currentLanguage + "/contact-us"}>Contact Us</Link>
+                                    <Link href="/[...slug]" as={"/" + currentLanguage + "/contact-us"}><a>Contact Us</a></Link>
                                 </li>
                                 <li>
-                                    <Link to='/'>Cookie Policy</Link>
+                                    <Link href="/index" as='/'><a>Cookie Policy</a></Link>
                                 </li>
                                 <li>
-                                    <Link to={"/" + currentLanguage + "/info/privacy-policy"}>Privacy Policy</Link>
+                                    <Link href="/[...slug]" as={"/" + currentLanguage + "/info/privacy-policy"}><a>Privacy Policy</a></Link>
                                 </li>
                                 <li>
-                                    <Link to={"/" + currentLanguage + "/info/terms-and-conditions"}>Terms and Conditions</Link>
+                                    <Link href="/[...slug]" as={"/" + currentLanguage + "/info/terms-and-conditions"}><a>Terms and Conditions</a></Link>
                                 </li>
                             </ul>
                         </div>

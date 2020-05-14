@@ -1,12 +1,11 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 /**
  * Main Breadcrumb Component
  */
 const Breadcrumb = ({page, language}) => {
     const rootSlug = language === 'en' ? '/' : '/' + language;
-
     let nav = [];
     function getLinkFrom(sourcePage) {
         nav.push({title: sourcePage.navigationTitle ? sourcePage.navigationTitle : sourcePage.pageTitle, slug: sourcePage.slug});
@@ -25,14 +24,18 @@ const Breadcrumb = ({page, language}) => {
                     {nav && nav.length && nav.slice(0, nav.length - 1).map((item, i) => {
                         return <li key={i} className="cmp-breadcrumb__item" itemProp="itemListElement" itemType="http://schema.org/ListItem">
                             {item.isRoot && <>
-                                <Link to={rootSlug} className="cmp-breadcrumb__item-link" itemProp="item">
-                                    <span itemProp="name">{item.navigationTitle ? item.navigationTitle : item.pageTitle ? item.pageTitle : item.title}</span>
+                                <Link href="/[...slug]" as={rootSlug}>
+                                    <a className="cmp-breadcrumb__item-link" itemProp="item">
+                                        <span itemProp="name">{item.navigationTitle ? item.navigationTitle : item.pageTitle ? item.pageTitle : item.title}</span>
+                                    </a>
                                 </Link>
                                 <meta itemProp="position" content="1"/>
                             </>}
                             {!item.isRoot && <>
-                                <Link to={'/' + language + item.slug} className="cmp-breadcrumb__item-link" itemProp="item">
-                                    <span itemProp="name">{item.navigationTitle ? item.navigationTitle : item.pageTitle ? item.pageTitle : item.title}</span>
+                                <Link href="/[...slug]" as={'/' + language + item.slug}>
+                                    <a className="cmp-breadcrumb__item-link" itemProp="item">
+                                        <span itemProp="name">{item.navigationTitle ? item.navigationTitle : item.pageTitle ? item.pageTitle : item.title}</span>
+                                    </a>
                                 </Link>
                                 <meta itemProp="position" content="1"/>
                             </>}

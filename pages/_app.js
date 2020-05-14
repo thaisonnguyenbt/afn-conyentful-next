@@ -24,4 +24,4 @@ class MyApp extends App {
 }
 
 // Wraps all components in the tree with the data provider
-export default withData(withReactRouter(MyApp));
+export default withData(MyApp);

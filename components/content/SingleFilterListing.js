@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import LazyLoad from 'react-lazyload'
 import { BasicPageFields, TagFields, AssetFields } from '../../utils/fragments';
 import LazyLoadPlaceHolder from '../structure/LazyLoadPlaceHolder';
@@ -50,7 +50,7 @@ const SingleFilterListing = ({filter, language, locale}) => {
 
     const [isLoading, setLoading] = useState(false);
     const [numOfShown, setNumOfShown] = useState(filter.itemPerPage)
-    const [viewMode, setViewMode] = useState('list')
+    const [viewMode, setViewMode] = useState('grid')
 
     /**
      * Show more results
@@ -159,31 +159,39 @@ const SingleFilterListing = ({filter, language, locale}) => {
                                                                     </div>
                                                                 </div>
                                                                 <div className="m-content-box__middle">
-                                                                    <Link data-analytics-track-link to={'/' + language + page.slug}>
-                                                                        <div className="cmp-title">
-                                                                            <h3 className="cmp-title__text">{page.pageTitle ? page.pageTitle : page.title}</h3>
-                                                                        </div>
+                                                                    <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                        <a>
+                                                                            <div className="cmp-title">
+                                                                                <h3 className="cmp-title__text">{page.pageTitle ? page.pageTitle : page.title}</h3>
+                                                                            </div>
+                                                                        </a>
                                                                     </Link>
                                                                     <div className="m-content-box__copy">
                                                                         <span>{page.description ? page.description.description : ''}</span> 
-                                                                        <Link data-analytics-track-link to={'/' + language + page.slug} className="a-button -text">Explore More</Link>
+                                                                        <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                            <a className="a-button -text">Explore More</a>
+                                                                        </Link>
                                                                     </div>
                                                                 </div>
                                                                 <div className="m-content-box__lower">
                                                                     <div className="m-content-box__ratings">
-                                                                        <Link data-analytics-track-link to={'/' + language + page.slug} className="m-content-box__link no-underline"></Link>
+                                                                        <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                            <a className="m-content-box__link no-underline"></a>
+                                                                        </Link>
                                                                     </div>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                         <div className="col-8">
                                                             <div className="m-content-box__image">
-                                                                <Link data-analytics-track-link to={'/' + language + page.slug} className="a-linked-image">
-                                                                    <div className="a-animated -zoom">
-                                                                        { page.seoMetadataImage && page.seoMetadataImage.url && <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
-                                                                            <img src={page.seoMetadataImage.url} alt={page.pageTitle ? page.pageTitle : page.title} />
-                                                                        </LazyLoad> }
-                                                                    </div>
+                                                                <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                    <a>
+                                                                        <div className="a-animated -zoom">
+                                                                            { page.seoMetadataImage && page.seoMetadataImage.url && <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
+                                                                                <img src={page.seoMetadataImage.url} alt={page.pageTitle ? page.pageTitle : page.title} />
+                                                                            </LazyLoad> }
+                                                                        </div>
+                                                                    </a>
                                                                 </Link>
                                                             </div>
                                                         </div>
@@ -201,22 +209,27 @@ const SingleFilterListing = ({filter, language, locale}) => {
                                                 return <div key={i} className="col-12 col-md-4 m-data-listing__item no-tag">
                                                     <div className="m-signpost">
                                                         <div className="a-signpost__thumbnail">
-                                                            <Link data-analytics-track-link to={'/' + language + page.slug} className="a-linked-image a-signpost__link">
-                                                                <div className="a-animated -zoom">
-                                                                    <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={1000}>
-                                                                        <img src={page.seoMetadataImage && page.seoMetadataImage.url} alt={page.pageTitle ? page.pageTitle : page.title} />
-                                                                    </LazyLoad>
-                                                                </div>
+                                                            <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                <a className="a-linked-image a-signpost__link">
+                                                                    <div className="a-animated -zoom">
+                                                                        <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={1000}>
+                                                                            <img src={page.seoMetadataImage && page.seoMetadataImage.url} alt={page.pageTitle ? page.pageTitle : page.title} />
+                                                                        </LazyLoad>
+                                                                    </div>
+                                                                </a>
                                                             </Link>
                                                         </div>
                                                         <div className="m-signpost__content">
                                                             <div className="a-signpost__title">
-                                                                <Link data-analytics-track-link to={'/' + language + page.slug} className="a-signpost__link">
-                                                                    <h4>{page.pageTitle ? page.pageTitle : page.title}</h4>
+                                                                <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                    <a className="a-signpost__link">
+                                                                        <h4>{page.pageTitle ? page.pageTitle : page.title}</h4>
+                                                                    </a>
                                                                 </Link>
                                                             </div>
                                                             <div className="m-signpost__ratings">
-                                                                <Link data-analytics-track-link to={'/' + language + page.slug} rating-categoryid="afn_ratings_reviews_default_configuration" rating-streamid="xxx" className="a-signpost__link no-underline">
+                                                                <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                                                    <a className="a-signpost__link no-underline"></a>
                                                                 </Link>
                                                             </div>
                                                         </div>

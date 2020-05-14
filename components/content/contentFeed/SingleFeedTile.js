@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import LazyLoad from 'react-lazyload'
 import LazyLoadPlaceHolder from '../../structure/LazyLoadPlaceHolder';
 
@@ -22,10 +22,12 @@ const SingleTile = ({feed, language}) => {
                     { categoryTagName && <div className="a-category-tag">
                         <span className="a-category-tag__title">{categoryTagName}</span>
                     </div> }
-                    { feed.ctaPath && <Link to={'/' + language + feed.ctaPath} target={navTarget}>
-                        <div className="cmp-title">
-                            <h3 className="cmp-title__text">{feed.title}</h3>
-                        </div>
+                    { feed.ctaPath && <Link href="/[...slug]" as={'/' + language + feed.ctaPath}>
+                        <a target={navTarget}>
+                            <div className="cmp-title">
+                                <h3 className="cmp-title__text">{feed.title}</h3>
+                            </div>
+                        </a>
                     </Link> }
                     { !feed.isHideDesc && feed.description && <div className="m-content-box__copy">
                         <span>{feed.description}</span>
@@ -34,19 +36,21 @@ const SingleTile = ({feed, language}) => {
             </div>
             <div className="col-8">
                 <div className="m-content-box__image">
-                    <Link className="a-linked-image" to={'/' + language + feed.ctaPath} target={navTarget}>
-                        <div className="cmp-image a-animated -zoom"
-                            itemType="http://schema.org/ImageObject">
-                            { feed.image && feed.image.url && <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
-                                <img src={feed.image.url}
-                                    data-src={feed.image.url}						
-                                    className="cmp-image__image" 
-                                    itemProp="contentUrl"
-                                    data-cmp-hook-image="image" 
-                                    alt={feed.title}
-                                    title={feed.title}/>
-                            </LazyLoad> }
-                        </div>
+                    <Link href="/[...slug]" as={'/' + language + feed.ctaPath}>
+                        <a target={navTarget}>
+                            <div className="cmp-image a-animated -zoom"
+                                itemType="http://schema.org/ImageObject">
+                                { feed.image && feed.image.url && <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
+                                    <img src={feed.image.url}
+                                        data-src={feed.image.url}						
+                                        className="cmp-image__image" 
+                                        itemProp="contentUrl"
+                                        data-cmp-hook-image="image" 
+                                        alt={feed.title}
+                                        title={feed.title}/>
+                                </LazyLoad> }
+                            </div>
+                        </a>
                     </Link>
                 </div>
             </div>
@@ -54,22 +58,24 @@ const SingleTile = ({feed, language}) => {
         { feed.boxOrientation === 'right' && <div className="row">
             <div className="col-8">
                 <div className="m-content-box__image">
-                    <Link className="a-linked-image" to={'/' + language + feed.ctaPath} target={navTarget}>
-                        <div className="cmp-image a-animated -zoom"
-                            data-cmp-src={feed.ctaPath}
-                            data-title={feed.title}
-                            itemScope=""
-                            itemType="http://schema.org/ImageObject">
-                            <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
-                                <img src={feed.image.url}
-                                    data-src={feed.image.url}						
-                                    className="cmp-image__image" 
-                                    itemProp="contentUrl"
-                                    data-cmp-hook-image="image" 
-                                    alt={feed.title}
-                                    title={feed.title}/>
-                            </LazyLoad>
-                        </div>
+                    <Link href="/[...slug]" as={'/' + language + feed.ctaPath}>
+                        <a className="a-linked-image" target={navTarget}>
+                            <div className="cmp-image a-animated -zoom"
+                                data-cmp-src={feed.ctaPath}
+                                data-title={feed.title}
+                                itemScope=""
+                                itemType="http://schema.org/ImageObject">
+                                <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
+                                    <img src={feed.image.url}
+                                        data-src={feed.image.url}						
+                                        className="cmp-image__image" 
+                                        itemProp="contentUrl"
+                                        data-cmp-hook-image="image" 
+                                        alt={feed.title}
+                                        title={feed.title}/>
+                                </LazyLoad>
+                            </div>
+                        </a>
                     </Link>
                 </div>
             </div>
@@ -79,10 +85,12 @@ const SingleTile = ({feed, language}) => {
                         <span className="a-category-tag__title">{categoryTagName}</span>
                     </div> }
 
-                    <Link to={'/' + language + feed.ctaPath} target={navTarget}>
-                        <div className="cmp-title">
-                            <h3 className="cmp-title__text">{feed.title}</h3>
-                        </div>
+                    <Link href="/[...slug]" as={'/' + language + feed.ctaPath}>
+                        <a target={navTarget}>
+                            <div className="cmp-title">
+                                <h3 className="cmp-title__text">{feed.title}</h3>
+                            </div>
+                        </a>
                     </Link>
                     
                     { !feed.isHideDesc && feed.description && <div className="m-content-box__copy">

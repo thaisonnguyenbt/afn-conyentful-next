@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { BasicPageFields, TagFields, AssetFields } from '../../utils/fragments';
 import Error from '../structure/Error';
 import { preview } from '../../config/apollo-client';
@@ -107,37 +107,41 @@ const SiblingPagination = ({ slug, language, locale }) => {
                                 <div className="row m-default-pagination-img" data-pagination="default">
                                     { !!prev && <div className="col-md-6 col-6 m-default-pagination-img__prev p-0">
                                         <div className="pagination-card ">
-                                            <Link to={'/' + language + prev.slug}>
-                                                <div className="row no-gutters">
-                                                    <div className="col-md-4 order-md-2">
-                                                        { prev.seoMetadataImage && prev.seoMetadataImage && <div className="a-bg-img" style={{backgroundImage : `url(${prev.seoMetadataImage.url})`}}></div> }
-                                                    </div>
-                                                    <div className="col-md-8 order-md-1">
-                                                        <div className="pagination-card__body">
-                                                            <span className="icon-afn-navigate-left"></span>
-                                                            <h5 className="card-title">Prev</h5>
-                                                            <p className="card-text clamp-3">{prev.pageTitle ? prev.pageTitle : prev.title}</p>
+                                            <Link href="/[...slug]" as={'/' + language + prev.slug}>
+                                                <a>
+                                                    <div className="row no-gutters">
+                                                        <div className="col-md-4 order-md-2">
+                                                            { prev.seoMetadataImage && prev.seoMetadataImage && <div className="a-bg-img" style={{backgroundImage : `url(${prev.seoMetadataImage.url})`}}></div> }
+                                                        </div>
+                                                        <div className="col-md-8 order-md-1">
+                                                            <div className="pagination-card__body">
+                                                                <span className="icon-afn-navigate-left"></span>
+                                                                <h5 className="card-title">Prev</h5>
+                                                                <p className="card-text clamp-3">{prev.pageTitle ? prev.pageTitle : prev.title}</p>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </Link>
                                         </div>
                                     </div> }
                                     { !!next && <div className="col-md-6 col-6 m-default-pagination-img__next p-0">
                                         <div className="pagination-card ">
-                                            <Link to={'/' + language + next.slug}>
-                                                <div className="row no-gutters">
-                                                    <div className="col-md-4">
-                                                        { next.seoMetadataImage && next.seoMetadataImage.url && <div className="a-bg-img" style={{backgroundImage : `url(${next.seoMetadataImage.url})`}}></div> }
-                                                    </div>
-                                                    <div className="col-md-8">
-                                                        <div className="pagination-card__body">
-                                                            <h5 className="card-title">Next</h5>
-                                                            <p className="card-text clamp-3">{next.pageTitle ? next.pageTitle : next.title}</p>
-                                                            <span className="icon-afn-navigate-right"></span>
+                                            <Link href="/[...slug]" as={'/' + language + next.slug}>
+                                                <a>
+                                                    <div className="row no-gutters">
+                                                        <div className="col-md-4">
+                                                            { next.seoMetadataImage && next.seoMetadataImage.url && <div className="a-bg-img" style={{backgroundImage : `url(${next.seoMetadataImage.url})`}}></div> }
+                                                        </div>
+                                                        <div className="col-md-8">
+                                                            <div className="pagination-card__body">
+                                                                <h5 className="card-title">Next</h5>
+                                                                <p className="card-text clamp-3">{next.pageTitle ? next.pageTitle : next.title}</p>
+                                                                <span className="icon-afn-navigate-right"></span>
+                                                            </div>
                                                         </div>
                                                     </div>
-                                                </div>
+                                                </a>
                                             </Link>
                                         </div>
                                     </div>}

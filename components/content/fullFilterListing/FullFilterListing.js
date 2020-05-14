@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import { BasicPageFields, TagFields, AssetFields } from '../../../utils/fragments';
 import { gql } from '@apollo/client';
 import { Query } from "react-apollo";
@@ -239,8 +239,10 @@ const FullFilterListing = ({filter, locale, language}) => {
                                                                 <FullFilterListingItemListView page={page} language={language} />
                                                             </div>
                                                         })}
-                                                        <Link to={'/' + language + subfilter.ctaPath} className="m-data-listing-group__link">
-                                                            <button className="a-button -secondary">View All</button>
+                                                        <Link href="/[...slug]" as={'/' + language + subfilter.ctaPath}>
+                                                            <a className="m-data-listing-group__link">
+                                                                <button className="a-button -secondary">View All</button>
+                                                            </a>
                                                         </Link>
                                                     </div>
                                                 </div>
@@ -259,8 +261,10 @@ const FullFilterListing = ({filter, locale, language}) => {
                                                                 </div>
                                                             })}
                                                         </div>
-                                                        <Link to={'/' + language + subfilter.ctaPath} className="m-data-listing-group__link">
-                                                            <button className="a-button -secondary">View All</button>
+                                                        <Link href="/[...slug]" as={'/' + language + subfilter.ctaPath}>
+                                                            <a className="m-data-listing-group__link">
+                                                                <button className="a-button -secondary">View All</button>
+                                                            </a>
                                                         </Link>
                                                     </div>
                                                 </div>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useLocation } from "react-router-dom";
+import { useRouter } from 'next/router'
 import { Query } from "react-apollo";
 import gql from "graphql-tag";
 import { LinkFromFields, LinkFromRecursive, FullPageFields, ContentFeedFields, PageContentFragment, AssetFields, TagFields, CarouselFields, SingleFilterListingFields, MultipleFilterListingFields, FilterFields, RecipeFields, ArticleFields, BrightcoveVideoFields } from '../../utils/fragments'
@@ -41,7 +41,8 @@ const PageQuery = gql`
 `;
 
 const AfnPage = () => {
-    let { pathname } = useLocation();
+
+    let pathname = useRouter().asPath;
     let language = "";
     let locale = "";
 
@@ -58,7 +59,6 @@ const AfnPage = () => {
         language = defaultLanguage;
         locale = defaultLocale;
     }
-    
     return <Query query={PageQuery} variables= {{ preview, locale, slug: pathname}}>
       {({ loading, error, data }) => {
         if (loading) return <Loading />;
@@ -67,7 +67,6 @@ const AfnPage = () => {
           return <Error />;
         }
         let page = data.pageCollection.items[0];
-        
         return <>
           <ReactSEO title={page.pageTitle} description={page.description} />
           <Breadcrumb page={page} language={language} />

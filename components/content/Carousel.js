@@ -1,6 +1,6 @@
 import React from 'react';
 import OwlCarousel from 'react-owl-carousel2';
-import {Link} from 'react-router-dom'
+import Link from 'next/link';
 
 const options = {
     items: 1,
@@ -29,7 +29,7 @@ const Carousel = ({data, language}) => {
                         return <div role="tabpanel" className="cmp-carousel__item m-carousel-slide" data-cmp-hook-carousel="item" key={i}>
                             <div className="featuredsignpost">
                                 <div className="m-featured-signpost">
-                                    <Link to={language + item.featuredURL}>
+                                    <Link href="/[...slug]" as={language + item.featuredURL}>
                                         <div className="m-featured-signpost__background">
                                             <div className="cmp-image" data-cmp-src={item.image.url} itemScope="" itemType="http://schema.org/ImageObject">
                                                 <img src={item.image.url} className="cmp-image__image" title={item.title} alt={item.title} itemProp="contentUrl" data-cmp-hook-image="image" />
@@ -40,10 +40,12 @@ const Carousel = ({data, language}) => {
                                         <div className="a-category-tag">
                                             <span className="a-category-tag__title">{item.categoryTag.name}</span>
                                         </div>
-                                        <Link className="a-featured-signpost__link" to={language + item.featuredURL}>
-                                            <div className="cmp-title">
-                                                <h1 className="cmp-title__text">{item.title}</h1>
-                                            </div>
+                                        <Link href="/[...slug]" as={language + item.featuredURL}>
+                                            <a className="a-featured-signpost__link">
+                                                <div className="cmp-title">
+                                                    <h1 className="cmp-title__text">{item.title}</h1>
+                                                </div>
+                                            </a>
                                         </Link>
                                         <div className="a-featured-signpost__subtitle">
                                             <div className="cmp-text">

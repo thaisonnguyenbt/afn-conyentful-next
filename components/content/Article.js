@@ -2,7 +2,7 @@ import React from 'react';
 import LazyLoad from 'react-lazyload'
 import LazyLoadPlaceHolder from '../structure/LazyLoadPlaceHolder';
 import BrightcovePlayer from './brightcovePlayer/BrightcovePlayer'
-import {Link} from 'react-router-dom';
+import Link from 'next/link';
 import facebook from '../../resources/images/social-media/facebook-default.svg';
 import pinterest from '../../resources/images/social-media/pinterest-default.svg';
 import twitter from '../../resources/images/social-media/twitter-default.svg';
@@ -87,8 +87,10 @@ const Article = ({article, tags}) => {
                                     { tags && tags.map((tag, i) => {
                                         return <li key={i}>
                                             <div className="a-category-tag">
-                                                <Link to={"/en/search.html?search=" + encodeURI(tag.name)}>
-                                                    <span className="a-category-tag__title">{tag.name}</span>
+                                                <Link href="/[...slug]" as={"/en/search.html?search=" + encodeURI(tag.name)}>
+                                                    <a>
+                                                        <span className="a-category-tag__title">{tag.name}</span>
+                                                    </a>
                                                 </Link>
                                             </div>
                                         </li>

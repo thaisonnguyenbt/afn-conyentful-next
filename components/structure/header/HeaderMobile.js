@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import logo from '../../../resources/images/logo/afn-logo-white.svg'
 
 /**
@@ -44,8 +44,8 @@ const NavBarMobile = ({siteMetadata}) => {
                 </div>
             </div>
             <div className="m-navbar__logo">
-                <Link to="/">
-                    <img src={logo} className="lazyload" title={ siteMetadata.title } alt={ siteMetadata.description } />
+                <Link href="/index" as="/">
+                    <a><img src={logo} className="lazyload" title={ siteMetadata.title } alt={ siteMetadata.description } /></a>
                 </Link>
             </div>
             <div className="o-navbar__rightAligned">
@@ -55,10 +55,12 @@ const NavBarMobile = ({siteMetadata}) => {
                     </button>
                 </div>
                 <div className="a-navbar__bookmark">
-                    <Link to="/en/bookmark" target="_self">
-                        <svg className="a-afnIcon -bookmark -filled" role="img" viewBox="0 0 12 17">
-                            <path d="M.5 0h11c.3 0 .5.2.5.5v15.4a.5.5 0 0 1-.8.4l-5-3.1a.5.5 0 0 0-.5 0l-5 3.1a.5.5 0 0 1-.7-.4V.5C0 .2.2 0 .5 0z" fillRule="evenodd"></path>
-                        </svg>
+                    <Link href="/[...slug]" as="/en/bookmark">
+                        <a target="_self">
+                            <svg className="a-afnIcon -bookmark -filled" role="img" viewBox="0 0 12 17">
+                                <path d="M.5 0h11c.3 0 .5.2.5.5v15.4a.5.5 0 0 1-.8.4l-5-3.1a.5.5 0 0 0-.5 0l-5 3.1a.5.5 0 0 1-.7-.4V.5C0 .2.2 0 .5 0z" fillRule="evenodd"></path>
+                            </svg>
+                        </a>
                     </Link>
                 </div>
             </div>

@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
-import { Link } from "react-router-dom";
+import Link from "next/link";
+import { useRouter } from 'next/router'
 import logo from "../../../resources/images/logo/afn-logo-white.svg"
 import siteMetadata from '../../../config/SiteMetaData'
 import {allLanguages} from '../../../config/siteConfig'
@@ -11,19 +12,17 @@ import {allLanguages} from '../../../config/siteConfig'
  *      Metadata read from gatsby-config.js
  */
 const HeaderDesktop = () => {
-    //if (process.browser) {
-        let currentLanguage = 'en';
-        let pathname = '/en/articles';
-        if (pathname.length > 2) {
-            currentLanguage = pathname.substr(1,2);
-            pathname = pathname.substr(3)
-        }
-        if (pathname === '/') {
-            pathname = '';
-        }
-    //}
-        
-      
+    let currentLanguage = 'en';
+    let routerObj = useRouter();
+    let pathname = routerObj.asPath;
+    
+    if (pathname.length > 2) {
+        currentLanguage = pathname.substr(1,2);
+        pathname = pathname.substr(3)
+    }
+    if (pathname === '/') {
+        pathname = '';
+    }
 
     function updatePathName(language) {
         if (process.browser) {
@@ -48,14 +47,22 @@ const HeaderDesktop = () => {
         <div className="o-navbar__main">
             <div className="m-navbar__socialMediaList">
                 {allLanguages.map((language, i) => {
-                    return <Link to={pathname ? '/' + language + pathname : language === 'en' ? '' : '/' + language} key={i}>
-                        <div className={"flag-icon " + language }></div>
+                    let href = "/index";
+                    let path = "/";
+                    if (pathname) {
+                        href = "/[...slug]";
+                        path = '/' + language + pathname;
+                    } else if (language !== 'en') {
+                        path = '/' + language;
+                    }
+                    return <Link href={href} as={path} key={i}>
+                        <a><div className={"flag-icon " + language }></div></a>
                     </Link>
                 })}
             </div>
             <div className="m-navbar__logo">
-                <Link to={currentLanguage === 'en' ? '/' : '/' + currentLanguage}>
-                    <img src={logo} className="lazyload" title={ siteMetadata.title } alt={ siteMetadata.description } />
+                <Link href="/index" as={currentLanguage === 'en' ? '/' : '/' + currentLanguage}>
+                    <a><img src={logo} className="lazyload" title={ siteMetadata.title } alt={ siteMetadata.description } /></a>
                 </Link>
             </div>
             <div className="o-navbar__rightAligned">
@@ -79,11 +86,13 @@ const HeaderDesktop = () => {
                     </button>
                 </div>
                 <div className="a-navbar__bookmark">
-                    <Link to="/en/bookmark" target="_self">
-                        <svg className="a-afnIcon -bookmark -filled" role="img" viewBox="0 0 12 17">
-                            <path d="M.5 0h11c.3 0 .5.2.5.5v15.4a.5.5 0 0 1-.8.4l-5-3.1a.5.5 0 0 0-.5 0l-5 3.1a.5.5 0 0 1-.7-.4V.5C0 .2.2 0 .5 0z" fillRule="evenodd"></path>
-                        </svg>
-                        <span>Saves</span>
+                    <Link href="/[...slug]" as="/en/bookmark">
+                        <a>
+                            <svg className="a-afnIcon -bookmark -filled" role="img" viewBox="0 0 12 17">
+                                <path d="M.5 0h11c.3 0 .5.2.5.5v15.4a.5.5 0 0 1-.8.4l-5-3.1a.5.5 0 0 0-.5 0l-5 3.1a.5.5 0 0 1-.7-.4V.5C0 .2.2 0 .5 0z" fillRule="evenodd"></path>
+                            </svg>
+                            <span>Saves</span>
+                        </a>
                     </Link>
                 </div>
                 <div className="o-navbar__profile dropdown">
@@ -103,7 +112,7 @@ const HeaderDesktop = () => {
                             </g>
                         </svg>
                         <div className="a-profile-no-avatar">
-                            <img src="/etc.clientlibs/afn/clientlibs/clientlib-site/resources/images/common/profile-loggedin.png" alt=""/>
+                            <img src="https://asianfoodnetwork.com/etc.clientlibs/afn/clientlibs/clientlib-site/resources/images/common/profile-loggedin.png" alt=""/>
                         </div>
                         <div className="a-profile-avatar">
                             <img src="" alt=""/>

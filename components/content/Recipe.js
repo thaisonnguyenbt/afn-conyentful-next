@@ -1,5 +1,5 @@
 import React from 'react';
-import {Link} from 'react-router-dom'
+import Link from 'next/link'
 import LazyLoad from 'react-lazyload'
 import LazyLoadPlaceHolder from '../structure/LazyLoadPlaceHolder';
 import afnLogo from '../../resources/images/logo/afn-logo-red.png';
@@ -111,13 +111,15 @@ const RecipeDetails = ({recipe, foodLabels}) => {
                             <div className="row active m-icon-text-list" data-list="teaser">
                                 { foodLabels.slice(0, 4).map((foodLabel, i) => {
                                     return <div className="col-6 col-md-4 col-lg-3" key={i}>
-                                        <Link className="m-icon-text-listItem" to="/en/search.html?search=halal">
-                                            <div className="m-icon-text-listItem__img">
-                                                <img src={'../../resources/images/food-icons/' + foodLabel.value + '.svg'} alt={foodLabel.name} title={foodLabel.name} />
-                                            </div>
-                                            <div className="m-icon-text-listItem__label">
-                                                <span>{foodLabel.name}</span>
-                                            </div>
+                                        <Link href="/[...slug]" as="/en/search.html?search=halal">
+                                            <a className="m-icon-text-listItem" >
+                                                <div className="m-icon-text-listItem__img">
+                                                    <img src={'../../resources/images/food-icons/' + foodLabel.value + '.svg'} alt={foodLabel.name} title={foodLabel.name} />
+                                                </div>
+                                                <div className="m-icon-text-listItem__label">
+                                                    <span>{foodLabel.name}</span>
+                                                </div>
+                                            </a>
                                         </Link>
                                     </div>
                                 })}

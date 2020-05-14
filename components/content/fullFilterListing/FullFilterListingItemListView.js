@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 import LazyLoad from 'react-lazyload'
 import LazyLoadPlaceHolder from '../../structure/LazyLoadPlaceHolder';
 
@@ -22,23 +22,28 @@ const FullFilterListingItemListView = ({page, language}) => {
                         </div>
                     </div>
                     <div className="m-content-box__middle">
-                        <Link to={'/' + language + page.slug}>
-                            <div className="cmp-title">
-                                <h3 className="cmp-title__text">
-                                    {page.pageTitle ? page.pageTitle : page.title}
-                                </h3>
-                            </div>
+                        <Link href="/[...slug]" as={'/' + language + page.slug}>
+                            <a>
+                                <div className="cmp-title">
+                                    <h3 className="cmp-title__text">
+                                        {page.pageTitle ? page.pageTitle : page.title}
+                                    </h3>
+                                </div>
+                            </a>
                         </Link>
                         <div className="m-content-box__copy">
                             <span>{page.description && page.description.description}</span> 
-                            <Link to={'/' + language + page.slug} className="a-button -text">
-                                Explore More
+                            <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                <a className="a-button -text">
+                                    Explore More
+                                </a>
                             </Link>
                         </div>
                     </div>
                     <div className="m-content-box__lower">
                         <div className="m-content-box__ratings">
-                            <Link to={'/' + language + page.slug} rating-categoryid="afn_ratings_reviews_default_configuration" rating-streamid="xxx" className="m-content-box__link no-underline">
+                            <Link href="/[...slug]" as={'/' + language + page.slug}>
+                                <a className="m-content-box__link no-underline"></a>
                             </Link>
                         </div>
                     </div>
@@ -46,12 +51,14 @@ const FullFilterListingItemListView = ({page, language}) => {
             </div>
             <div className="col-8">
                 <div className="m-content-box__image">
-                    <Link to={'/' + language + page.slug}  className="a-linked-image a-signpost__link">
-                        <div className="a-animated -zoom">
-                            <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
-                                <img src={page.seoMetadataImage && page.seoMetadataImage.url} alt={page.pageTitle ? page.pageTitle : page.title} />
-                            </LazyLoad>
-                        </div>
+                    <Link href="/[...slug]" as={'/' + language + page.slug}>
+                        <a className="a-linked-image a-signpost__link">
+                            <div className="a-animated -zoom">
+                                <LazyLoad placeholder={<LazyLoadPlaceHolder />} throttle={500}>
+                                    <img src={page.seoMetadataImage && page.seoMetadataImage.url} alt={page.pageTitle ? page.pageTitle : page.title} />
+                                </LazyLoad>
+                            </div>
+                        </a>
                     </Link>
                 </div>
             </div>

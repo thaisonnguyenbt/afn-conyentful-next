@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {Accordion, Card} from 'react-bootstrap'
 
 /**
@@ -62,20 +62,26 @@ const HeaderMobileNavBar = ({siteMetadata, pages, language}) => {
                             <Accordion defaultActiveKey="-1">
                                 <Card className="m-hamburgerMenuItem">
                                     <Card.Header>
-                                        <Accordion.Toggle as={Link} variant="link" eventKey="0" onClick={(event) => toggleAccordion(event)} className="m-hamburgerMenuItem__accordion" to="/">
-                                            <span className="bold">{page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}</span>
-                                            <div className="m-hamburgerMenuItem__icon">
-                                                <span className="icon-afn-navigate-down"></span>
-                                                <span className="icon-afn-navigate-up"></span>
-                                            </div>
+                                        <Accordion.Toggle as={Card} eventKey="0">
+                                            <Link href="/index" as="/">
+                                                <a className="m-hamburgerMenuItem__accordion" variant="link" onClick={(event) => toggleAccordion(event)}>
+                                                    <span className="bold">{page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}</span>
+                                                    <div className="m-hamburgerMenuItem__icon">
+                                                        <span className="icon-afn-navigate-down"></span>
+                                                        <span className="icon-afn-navigate-up"></span>
+                                                    </div>
+                                                </a>
+                                            </Link>
                                         </Accordion.Toggle>
                                     </Card.Header>
                                     <Accordion.Collapse eventKey="0">
                                         <Card.Body>
                                             <div id="sub-mobile-nav-0" data-parent="#mobile-nav">
                                                 <div className="m-accordionMenu">
-                                                    <Link to={'/' + language + "/" + page.slug} className="accordionMenu__subLink -main" key={0}>
-                                                        <p className="m-subMenuItem__label">All</p>
+                                                    <Link href="/[...slug]" as={'/' + language + "/" + page.slug}>
+                                                        <a className="accordionMenu__subLink -main">
+                                                            <p className="m-subMenuItem__label">All</p>
+                                                        </a>
                                                     </Link>
                                                     {page.childrenCollection.items.map((child, i) => {
                                                         if (child.isHideInSecondNav) {
@@ -85,7 +91,11 @@ const HeaderMobileNavBar = ({siteMetadata, pages, language}) => {
                                                         if (child.slug) {
                                                             slug += '/' + child.slug
                                                         }
-                                                        return <Link to={'/' + slug} key={i} className="m-accordionMenu__subLink">{child.navigationTitle ? child.navigationTitle : child.pageTitle ? child.pageTitle : child.title}</Link>
+                                                        return <Link href="/[...slug]" as={'/' + slug} key={i}>
+                                                            <a className="m-accordionMenu__subLink">
+                                                                {child.navigationTitle ? child.navigationTitle : child.pageTitle ? child.pageTitle : child.title}
+                                                            </a>
+                                                        </Link>
                                                     })}
                                                 </div>
                                             </div>
@@ -96,7 +106,11 @@ const HeaderMobileNavBar = ({siteMetadata, pages, language}) => {
                         }
                         { !page.isHideInNav && !page.subtitle && 
                             <div className="m-hamburgerMenuItem">
-                                <Link to={'/' + language + '/' + page.slug} className="m-hamburgerMenuItem__link bold" role="button">{page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}</Link>
+                                <Link href="/[...slug]" as={'/' + language + '/' + page.slug}>
+                                    <a className="m-hamburgerMenuItem__link bold" role="button">
+                                        {page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}
+                                    </a>
+                                </Link>
                             </div>
                         }
                     </div>
@@ -128,28 +142,30 @@ const HeaderMobileNavBar = ({siteMetadata, pages, language}) => {
                     <button button-click="gigya-signup">Sign Up</button>
                 </div>
                 <div className="m-hamburgerMenuItem__item m-hamburgerMenuItem__profileName">
-                    <Link to="/">
-                        <svg className="a-afnIcon -profile -filled active" width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
-                            <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
-                                <g transform="translate(-1211.000000, -2.000000)">
-                                    <g transform="translate(0.000000, -14.000000)">
-                                        <g transform="translate(1195.000000, 0.000000)">
-                                            <g>
-                                                <polygon id="Path" points="0 0 96 0 96 96 0 96"></polygon>
-                                                <path d="M48,48 C56.84,48 64,40.84 64,32 C64,23.16 56.84,16 48,16 C39.16,16 32,23.16 32,32 C32,40.84 39.16,48 48,48 Z M48,56 C37.32,56 16,61.36 16,72 L16,80 L80,80 L80,72 C80,61.36 58.68,56 48,56 Z" id="Shape" fill="#CCCDCF" fillRule="nonzero"></path>
+                    <Link href="/index" as="/">
+                        <a>
+                            <svg className="a-afnIcon -profile -filled active" width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlnsXlink="http://www.w3.org/1999/xlink">
+                                <g stroke="none" strokeWidth="1" fill="none" fillRule="evenodd">
+                                    <g transform="translate(-1211.000000, -2.000000)">
+                                        <g transform="translate(0.000000, -14.000000)">
+                                            <g transform="translate(1195.000000, 0.000000)">
+                                                <g>
+                                                    <polygon id="Path" points="0 0 96 0 96 96 0 96"></polygon>
+                                                    <path d="M48,48 C56.84,48 64,40.84 64,32 C64,23.16 56.84,16 48,16 C39.16,16 32,23.16 32,32 C32,40.84 39.16,48 48,48 Z M48,56 C37.32,56 16,61.36 16,72 L16,80 L80,80 L80,72 C80,61.36 58.68,56 48,56 Z" id="Shape" fill="#CCCDCF" fillRule="nonzero"></path>
+                                                </g>
                                             </g>
                                         </g>
                                     </g>
                                 </g>
-                            </g>
-                        </svg>
-                        <div className="a-profile-no-avatar">
-                            <img src="/etc.clientlibs/afn/clientlibs/clientlib-site/resources/images/common/profile-loggedin.png" alt=""/>
-                        </div>
-                        <div className="a-profile-avatar">
-                            <img src="" alt=""/>
-                        </div>
-                        <span>Profile</span>
+                            </svg>
+                            <div className="a-profile-no-avatar">
+                                <img src="https://asianfoodnetwork.com/etc.clientlibs/afn/clientlibs/clientlib-site/resources/images/common/profile-loggedin.png" alt=""/>
+                            </div>
+                            <div className="a-profile-avatar">
+                                <img src="" alt=""/>
+                            </div>
+                            <span>Profile</span>
+                        </a>
                     </Link>
                 </div>
                 <div className="m-hamburgerMenuItem__item m-hamburgerMenuItem__logOut">

@@ -1,8 +1,11 @@
 import React from 'react';
-import Page from '../components/structure/Page';
+import Layout from '../components/structure/Layout';
+import AfnPage from '../components/structure/AfnPage';
 
 const IndexPage = () => {
-    return <Page />
+    return <Layout>
+        <AfnPage />
+    </Layout>
 }
 
 export default IndexPage

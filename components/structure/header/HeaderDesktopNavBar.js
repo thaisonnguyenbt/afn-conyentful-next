@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import OwlCarousel from 'react-owl-carousel2';
 import $ from 'jquery';
 
@@ -78,12 +78,20 @@ const HeaderDesktopNavBar = ({pages, language}) => {
                                     <div className="m-subMenu text-only">
                                         <OwlCarousel options={options} className="owl-carousel owl-theme">      
                                             <>
-                                                <Link to={'/' + language + page.slug} className="m-subMenuItem -main" key={0} onClick={(e) => toggleSubmenu(e)}>
-                                                    <p className="m-subMenuItem__label">{page.subtitle ? page.subtitle : page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}</p>
+                                                <Link href="/[...slug]" as={'/' + language + page.slug} key={0}>
+                                                    <a className="m-subMenuItem -main"  onClick={(e) => toggleSubmenu(e)}>
+                                                        <p className="m-subMenuItem__label">
+                                                            {page.subtitle ? page.subtitle : page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}
+                                                        </p>
+                                                    </a>
                                                 </Link>
                                                 { page.childrenCollection.items.map((child, i) => {
-                                                    return <Link to={'/' + language + child.slug} className={child.slug ? "m-subMenuItem" : "m-subMenuItem -main"} key={i + 1} onClick={(e) => toggleSubmenu(e)}>
-                                                        <p className="m-subMenuItem__label">{child.subtitle ? child.subtitle : child.navigationTitle ? child.navigationTitle : child.pageTitle ? child.pageTitle : child.title}</p>
+                                                    return <Link href="/[...slug]" as={'/' + language + child.slug} key={i + 1}>
+                                                        <a className={child.slug ? "m-subMenuItem" : "m-subMenuItem -main"} onClick={(e) => toggleSubmenu(e)}>
+                                                            <p className="m-subMenuItem__label">
+                                                                {child.subtitle ? child.subtitle : child.navigationTitle ? child.navigationTitle : child.pageTitle ? child.pageTitle : child.title}
+                                                            </p>
+                                                        </a>
                                                     </Link>
                                                 })}
                                             </>
@@ -93,7 +101,11 @@ const HeaderDesktopNavBar = ({pages, language}) => {
                             }
                             { !page.isHideInNav && !page.subtitle &&
                                 <li className="m-navbar__menuListItem">
-                                    <Link to={'/' + language + page.slug} className="m-menuListItem__link" onClick={(e) => toggleSubmenu(e)}>{page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}</Link>
+                                    <Link href="/[...slug]" as={'/' + language + page.slug} >
+                                        <a className="m-menuListItem__link" onClick={(e) => toggleSubmenu(e)}>
+                                            {page.navigationTitle ? page.navigationTitle : page.pageTitle ? page.pageTitle : page.title}
+                                        </a>
+                                    </Link>
                                 </li>
                             }
                         </div>
